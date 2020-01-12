@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../components/BottomNavbar/bottomnavbar.dart';
 
 class PaymentMethod extends StatefulWidget {
@@ -45,99 +44,114 @@ class _PaymentMethodState extends State<PaymentMethod> {
       body: SafeArea(
         child: Center(
             child: Stack(
-            children: <Widget>[
-             SingleChildScrollView(
-               child: Container(
-                 height: MediaQuery.of(context).size.height ,
-                 child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.center,
-                 children: <Widget>[
-                               Text(
-             'Payment Method',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black, fontSize: 20.0),
-            ),
-            new GestureDetector(
-              child: Container(
-                margin: EdgeInsets.symmetric(vertical: 15.0),
-                width: MediaQuery.of(context).size.width * (0.90),
-                              decoration: BoxDecoration(
-                                borderRadius: new BorderRadius.circular(4.0),
-                                color: const Color(0xff00ADEF),),
-                height: 100,
-                child:             Center(child: Text(
-              'Cash',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 20.0),
-            )),
-              ),
-            ),
-                        new GestureDetector(
-              child: Container(
-                margin: EdgeInsets.symmetric(vertical: 15.0),
-                width: MediaQuery.of(context).size.width * (0.90),
-                              decoration: BoxDecoration(
-                                borderRadius: new BorderRadius.circular(4.0),
-                                color: const Color(0xff00ADEF),),
-                height: 100,
-                child:             Center(child: Text(
-              'Card',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 20.0),
-            )),
-                  
-              ),
-            ),
+          children: <Widget>[
+            SingleChildScrollView(
+                child: Container(
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Payment Method',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.black, fontSize: 20.0),
+                  ),
                   new GestureDetector(
-              child: Container(
-                margin: EdgeInsets.symmetric(vertical: 15.0),
-                width: MediaQuery.of(context).size.width * (0.90),
-                              decoration: BoxDecoration(
-                                borderRadius: new BorderRadius.circular(4.0),
-                                color: const Color(0xff00ADEF),),
-                height: 100,
-                child:             Center(child: Text(
-              'Scan OPAY QR',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 20.0),
-            )),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/success');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 15.0),
+                      width: MediaQuery.of(context).size.width * (0.90),
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.circular(4.0),
+                        color: const Color(0xff00ADEF),
+                      ),
+                      height: 100,
+                      child: Center(
+                          child: Text(
+                        'Cash',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                      )),
+                    ),
+                  ),
+                  new GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/success');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 15.0),
+                      width: MediaQuery.of(context).size.width * (0.90),
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.circular(4.0),
+                        color: const Color(0xff00ADEF),
+                      ),
+                      height: 100,
+                      child: Center(
+                          child: Text(
+                        'Card',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                      )),
+                    ),
+                  ),
+                  new GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/success');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 15.0),
+                      width: MediaQuery.of(context).size.width * (0.90),
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.circular(4.0),
+                        color: const Color(0xff00ADEF),
+                      ),
+                      height: 100,
+                      child: Center(
+                          child: Text(
+                        'Scan OPAY QR',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                      )),
+                    ),
+                  )
+                ],
               ),
+            )),
+            Positioned(
+                bottom: 0,
+                child: InkWell(
+                    child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 45.0,
+                  color: const Color(0xff00ADEF),
+                  child: Padding(
+                    padding:
+                        EdgeInsets.only(top: 10.0, left: 22.0, right: 22.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text('Checkout',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              )),
+                          Text('NGN4000',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ))
+                        ]),
+                  ),
+                ))),
+            Positioned(
+              bottom: 10,
+              child: Container(
+                  width: MediaQuery.of(context).size.width * 0.90,
+                  child: BottomNavBar()),
             )
-                 ],
-               ),)
-             ),
-                       Positioned(
-          bottom: 0,  
-          child: InkWell(
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 45.0,
-              color: const Color(0xff00ADEF),
-            child:      Padding(
-              padding: EdgeInsets.only(top: 10.0, left: 22.0, right: 22.0),
-              child:Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:<Widget>[Text('Checkout',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        )),
-                        Text('NGN4000',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ))]),
-          ),
-          ))),
-             Positioned(
-               bottom: 10,
-               child: Container(
-                            width: MediaQuery.of(context).size.width * 0.90,
-                            child: BottomNavBar()),
-             )
-                          
-            ],
-          
+          ],
         )),
       ),
     );

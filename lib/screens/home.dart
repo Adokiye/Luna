@@ -132,7 +132,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(color: Colors.black, fontSize: 9.50),
                         )
                       ]),
-                      Container(
+                      InkWell(
+                        onTap: () {Navigator.pushNamed(context, '/homeSalon');},
+                        child:                       Container(
                         width: 140,
                         child: Row(
                             //                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -156,6 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               )
                             ]),
                       ),
+                      ),
+
                     ],
                   )),
               Container(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 class Dress extends StatefulWidget {
   Dress({Key key, this.title}) : super(key: key);

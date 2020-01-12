@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../../components/Lists/Shirts/Shirts.dart';
 import '../../components/Lists/Trousers/Trousers.dart';
 import '../../components/Lists/Suits/Suits.dart';
@@ -512,7 +511,7 @@ class _ClothTypesState extends State<ClothTypes> {
                   bottom: 0,
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, '/pay');
+                      Navigator.pushNamed(context, '/numberofclothes');
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
