@@ -5,6 +5,9 @@ import '../../../components/BottomNavbar/bottomnavbar.dart';
 import 'package:luno/screens/ItemModel.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
+import '../../../components/TextInputs/boxEmailInput.dart';
+import '../../../components/TextInputs/boxNumberInput.dart';
+import '../../../components/TextInputs/boxTextInput.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class PickUpDetails extends StatefulWidget {
@@ -48,15 +51,25 @@ class _PickUpDetailsState extends State<PickUpDetails> {
             ),
           )),
       body: SafeArea(
+          child: Center(
         child: Stack(children: <Widget>[
           SingleChildScrollView(
-            child: PickUpForm(),
+            child: Column(
+              children:<Widget>[
+                          Container(
+            margin: EdgeInsets.symmetric(vertical: 10.0),
+            width: MediaQuery.of(context).size.width * 0.90,
+            child: Text('PICKUP DETAILS', style: TextStyle(fontSize: 14.0, color: Colors.black, fontWeight: FontWeight.w700),)
           ),
+                Container(
+                                margin: EdgeInsets.only(bottom: 60),
+                child: PickUpForm()),
+               ] )),
           Positioned(
               bottom: 0,
               child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/pay');
+                    //       Navigator.pushNamed(context, '/pay');
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width,
@@ -88,7 +101,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
                 child: BottomNavBar()),
           ),
         ]),
-      ),
+      )),
     );
 
     // Here we take the value from the MyHomePage object that was created by
@@ -117,7 +130,7 @@ class PickUpFormState extends State<PickUpForm> {
   int _radioValue2 = -1;
   final f = new DateFormat('yyyy-MM-dd hh:mm');
   var scheduleDate = new DateTime.now();
-  void _handleRadioValueChange2(int value, bool schedule) {
+  void _handleRadioValueChange2(int value) {
     setState(() {
       _radioValue2 = value;
 
@@ -134,7 +147,7 @@ class PickUpFormState extends State<PickUpForm> {
       //     break;
       // }
     });
-    if (schedule) {
+    if (value == 1) {
       DatePicker.showDatePicker(context,
           showTitleActions: true, minTime: scheduleDate, onChanged: (date) {
         Fluttertoast.showToast(
@@ -163,207 +176,17 @@ class PickUpFormState extends State<PickUpForm> {
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-                top: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      //                    <--- top side
-                      color: const Color(0xff00ADEF),
-                      width: 1.0,
-                    ),
-                  ),
-                  borderRadius: BorderRadius.circular(3.0)),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "ADDRESS",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your Address',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xffC4C4C4),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Address cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.multiline,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-                top: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      //                    <--- top side
-                      color: const Color(0xff00ADEF),
-                      width: 1.0,
-                    ),
-                  ),
-                  borderRadius: BorderRadius.circular(3.0)),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "FIRST NAME",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your First Name',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xffC4C4C4),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "First Name cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.text,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-                top: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      //                    <--- top side
-                      color: const Color(0xff00ADEF),
-                      width: 1.0,
-                    ),
-                  ),
-                  borderRadius: BorderRadius.circular(3.0)),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "SURNAME",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your Surname',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xffC4C4C4),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Surname cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.text,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                bottom: BorderSide(
-                  //                    <--- top side
-                  color: const Color(0xffC4C4C4),
-                  width: 1.0,
-                ),
-              )),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Phone Number",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your phone number',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xffC4C4C4),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Phone number cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.phone,
-                inputFormatters: [
-                  LengthLimitingTextInputFormatter(11),
-                ],
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                bottom: BorderSide(
-                  //                    <--- top side
-                  color: const Color(0xffC4C4C4),
-                  width: 1.0,
-                ),
-              )),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Email",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your Email',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xffC4C4C4),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Email cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.emailAddress,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
+          
+          BoxTextInput(
+            label: 'ADDRESS', optional: false, small: false
+          ),
+          BoxTextInput(label: 'FIRST NAME', optional: false, small: false),
+          BoxTextInput(label: 'LAST NAME', optional: false, small: false),
+          BoxNumberInput(label: 'PHONE NUMBER', optional: false, small: false),
+          BoxEmailInput(label: 'EMAIL', optional: false, small: false),
           Container(
               width: MediaQuery.of(context).size.width,
+     //         height: 200,
               margin: EdgeInsets.symmetric(vertical: 10.0),
               decoration: BoxDecoration(
                 boxShadow: [
@@ -375,6 +198,8 @@ class PickUpFormState extends State<PickUpForm> {
                 color: Colors.white,
               ),
               child: ListView.builder(
+                          shrinkWrap: true,
+        //  padding: const EdgeInsets.symmetric(vertical: 16.0),
                 itemCount: prepareData.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ExpansionPanelList(
@@ -387,7 +212,7 @@ class PickUpFormState extends State<PickUpForm> {
                                 //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   new Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                                 //   mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       new Radio(
                                         activeColor: const Color(0xff00adef),
@@ -413,7 +238,7 @@ class PickUpFormState extends State<PickUpForm> {
                                     ],
                                   ),
                                   new Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                          //          mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       new Radio(
                                         activeColor: const Color(0xff00adef),
@@ -438,19 +263,19 @@ class PickUpFormState extends State<PickUpForm> {
                                       )
                                     ],
                                   ),
-                                  prepareData[index].bodyModel.title2 ==
-                                          'Phone Call' ??
-                                      PhoneCallForm(),
-                                  prepareData[index].bodyModel.title2 ==
-                                          'Schedule for Later' ??
+                                  (_radioValue1 ==
+                                          1) && (index == 0) ?
+                                      PhoneCallForm() : new Container(),
+                                  (_radioValue2 ==
+                                          1) && (index == 1) ? 
                                       Text(
                                         f.format(scheduleDate),
                                         style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 11,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.w700,
                                         ),
-                                      ),
+                                      ) : new Container(),
                                 ])),
                         headerBuilder: (BuildContext context, bool isExpanded) {
                           return Container(
@@ -519,7 +344,7 @@ class PickUpFormState extends State<PickUpForm> {
 
   List<ItemModel> prepareData = <ItemModel>[
     ItemModel(
-        header: 'Delivery Details',
+        header: 'Delivery Details', 
         bodyModel:
             BodyModel(title1: 'Knock on Door', title2: 'Phone Call', id: 1)),
     ItemModel(
@@ -555,124 +380,11 @@ class PhoneCallFormState extends State<PhoneCallForm> {
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-                top: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                bottom: BorderSide(
-                  //                    <--- top side
-                  color: const Color(0xffC4C4C4),
-                  width: 1.0,
-                ),
-              )),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Name",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your name',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xffC4C4C4),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Name cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.text,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                bottom: BorderSide(
-                  //                    <--- top side
-                  color: const Color(0xffC4C4C4),
-                  width: 1.0,
-                ),
-              )),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Phone Number",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your phone number',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xffC4C4C4),
-                  ),
-                  border: InputBorder.none,
-                ),
-                inputFormatters: [
-                  LengthLimitingTextInputFormatter(11),
-                ],
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Phone Number cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.phone,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                bottom: BorderSide(
-                  //                    <--- top side
-                  color: const Color(0xffC4C4C4),
-                  width: 1.0,
-                ),
-              )),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Address",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your Address',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xffC4C4C4),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Address cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.text,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
+          BoxTextInput(label: 'NAME', optional: false, small: false,),
+          BoxNumberInput(
+            label: 'PHONE NUMBER', optional: false, small: false,
+          ),
+          BoxTextInput(label: 'ADDRESS', optional: false, small: false,),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(9.0),

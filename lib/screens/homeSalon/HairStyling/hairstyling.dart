@@ -44,10 +44,12 @@ class _HairStylingState extends State<HairStyling> {
               ),
             )),
         body: SafeArea(
-            child: Stack(
+            child: Center(
+              child: Stack(
                 //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
               Container(
+                                margin: EdgeInsets.only(bottom: 60),
                 height: MediaQuery.of(context).size.height,
                 child: SingleChildScrollView(
                   child: Column(
@@ -94,7 +96,7 @@ class _HairStylingState extends State<HairStyling> {
                     width: MediaQuery.of(context).size.width * 0.90,
                     child: BottomNavBar()),
               ),
-            ])));
+            ]))));
 
     // Here we take the value from the MyHomePage object that was created by
     // the App.build method, and use it to set our appbar title.

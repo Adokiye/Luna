@@ -47,7 +47,8 @@ class _NumberOfClothesState extends State<NumberOfClothes> {
         child: Stack(children: <Widget>[
           SingleChildScrollView(
               child: Container(
-                  height: MediaQuery.of(context).size.height,
+            //      height: MediaQuery.of(context).size.height,
+                   margin: EdgeInsets.only(bottom: 60.0),
                   child: Column(
                     children: <Widget>[
                       Container(

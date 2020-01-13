@@ -81,7 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             )
                           ]),
                         )),
-                    Container(
+                        InkWell(
+                           onTap: () {Navigator.pushNamed(context, '/homecleaning');},
+                          child:                     Container(
                       width: 140,
                       child: Row(
                           //                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,7 +106,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                   color: Colors.black, fontSize: 9.50),
                             )
                           ]),
-                    )
+                    ),
+                        )
+
                   ],
                 ),
               ),
@@ -115,7 +119,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Row(children: <Widget>[
+                      InkWell(
+                                                   onTap: () {Navigator.pushNamed(context, '/enterfooddetails');},
+                        child: Row(children: <Widget>[
                         Container(
                             margin: EdgeInsets.only(
                                 right:
@@ -131,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.black, fontSize: 9.50),
                         )
-                      ]),
+                      ])),
                       InkWell(
                         onTap: () {Navigator.pushNamed(context, '/homeSalon');},
                         child:                       Container(
@@ -169,7 +175,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Row(children: <Widget>[
+                      InkWell(
+                                                   onTap: () {Navigator.pushNamed(context, '/scheduledispatch');},
+                        child:                       Row(children: <Widget>[
                         Container(
                             margin: EdgeInsets.only(
                                 right:
@@ -186,7 +194,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(color: Colors.black, fontSize: 9.50),
                         )
                       ]),
-                      Container(
+                      ),
+                      InkWell(
+                                                 onTap: () {Navigator.pushNamed(context, '/postconstruction');},
+                                                 child:                       Container(
                         width: 140,
                         child: Row(
                             //                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -207,7 +218,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                     color: Colors.black, fontSize: 9.50),
                               )
                             ]),
-                      ),
+                      )
+                      )
+,
                     ],
                   )),
               Container(

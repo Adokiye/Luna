@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
-class Success extends StatelessWidget {
-  // var timer = Timer(Duration(seconds: 5), ()=> {Navigator.pushNamed(context, '/numberofclothes');});
+class Success extends StatefulWidget {
+  @override
+  _SuccessState createState() => new _SuccessState();
+}
+
+class _SuccessState extends State<Success> {
+   @override
+  initState() {
+    super.initState();
+    new Timer(const Duration(seconds: 5), onClose);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,6 +21,7 @@ class Success extends StatelessWidget {
                 child: Center(
                     child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.only(bottom: 10.0),
@@ -26,5 +37,8 @@ class Success extends StatelessWidget {
                                   child: Text('your tracking ID:#1123', style: TextStyle(fontSize: 30.0, color: Colors.white ),),)
               ],
             )))));
+  }
+      void onClose() {
+     Navigator.pushReplacementNamed(context, '/home');
   }
 }

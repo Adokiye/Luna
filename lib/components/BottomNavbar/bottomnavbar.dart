@@ -27,7 +27,7 @@ class BottomNavBar extends StatelessWidget {
 ),
                          //     highlightElevation: 1.0,
                                                        onPressed: () {
-                                Navigator.pushReplacementNamed(context, '/');
+                                Navigator.pushReplacementNamed(context, '/home');
                               },
                               child:  Container(
                                       width: 45.0,

@@ -16,7 +16,7 @@ class HeaderBox extends StatelessWidget {
                           blurRadius: 4.0,
                           offset: Offset(0.0, 2.0))
                     ],color: Colors.white,),
-    child: Center(child: Text(text, style: TextStyle(fontSize: 14.0, color: Colors.black),))                
+    child: Center(child: Text(text, style: TextStyle(fontSize: 14.0, color: Colors.black, fontWeight: FontWeight.w700),))                
     );
   }
 }

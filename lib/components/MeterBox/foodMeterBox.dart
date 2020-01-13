@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MeterBox extends StatelessWidget {
+class FoodMeterBox extends StatelessWidget {
   final String title;
-  final String description;
   final double amount;
-  MeterBox(
+  FoodMeterBox(
       {@required this.title,
-      @required this.description,
       @required this.amount});
 
   @override
@@ -14,7 +12,7 @@ class MeterBox extends StatelessWidget {
     return new Container(
         width: MediaQuery.of(context).size.width * 0.90,
         margin: EdgeInsets.symmetric(vertical: 10.0),
-       // height: description.isEmpty ? 234.09 : 121.0,
+        height: 73.0,
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
               color: Color.fromRGBO(0, 0, 0, 0.15),
@@ -26,14 +24,14 @@ class MeterBox extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Container(
-                      width: MediaQuery.of(context).size.width,
+                      width: MediaQuery.of(context).size.width * 0.90,
                   child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
                       title,
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 12.0,
                           fontWeight: FontWeight.w700),
                     ),
@@ -46,22 +44,18 @@ class MeterBox extends StatelessWidget {
                     )
                   ],
                 ),),
+                                Container(
+                      width: MediaQuery.of(context).size.width * 0.90,
+                  child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:<Widget>[
                 Container(
-                      width: MediaQuery.of(context).size.width,
-                      child: Text(description, style: TextStyle(color: Colors.black, fontSize: 12),),),
+                      child: Text(title, style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),),),
                 Container(
-                      width: MediaQuery.of(context).size.width * 1,
+                 //     width: MediaQuery.of(context).size.width * 0.60,
                       child: ListTileItem(),
-                ),
-                Container(
-                  height: 36.0,
-                      width: MediaQuery.of(context).size.width,
-                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(3.0),
-                ),
-                child: Center(
-                  child: Text('N2000', style: TextStyle(color: Colors.white, fontSize: 20.0),)
-                ),)
+                ),]),)
               ],
             )));
   }
@@ -79,10 +73,10 @@ class _ListTileItemState extends State<ListTileItem> {
   @override
   Widget build(BuildContext context) {
     return new Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+    //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(
-          'HOW MANY CLIENTS  ',
+          'HOW MANY ',
           style: TextStyle(
               color: Colors.black, fontSize: 10.0, fontWeight: FontWeight.w700),
         ),

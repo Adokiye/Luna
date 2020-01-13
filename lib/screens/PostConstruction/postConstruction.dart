@@ -3,6 +3,8 @@ import '../../components/BottomNavbar/bottomnavbar.dart';
 import '../../components/HeaderBox/headerbox.dart';
 import '../../components/Buttons/scheduleButton.dart';
 import 'package:flutter/services.dart';
+import '../../components/TextInputs/boxNumberInput.dart';
+import '../../components/TextInputs/boxTextInput.dart';
 
 class PostConstruction extends StatefulWidget {
   PostConstruction({Key key, this.title}) : super(key: key);
@@ -77,7 +79,10 @@ class _PostConstructionState extends State<PostConstruction> {
                               )),
                             ]),
                       ),
-                      MyCustomForm(),
+                                            Container(
+                                               margin: EdgeInsets.only(bottom: 60.0),
+                        child: MyCustomForm(),
+                      ),
                     ],
                   ),
                 ),
@@ -90,6 +95,7 @@ class _PostConstructionState extends State<PostConstruction> {
                       },
                       child: Container(
                         width: MediaQuery.of(context).size.width,
+                                                margin: EdgeInsets.only(top: 10.0),
                         height: 45.0,
                         color: const Color(0xff00ADEF),
                         child: Padding(
@@ -150,297 +156,35 @@ class MyCustomFormState extends State<MyCustomForm> {
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-                top: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3.0),
-                                  border: Border.all(
-                                      color: const Color(0xff00adef), width: 1.0),),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Name",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your full name',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xff00ADEF),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Name cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.text,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Container(
-                      width: MediaQuery.of(context).size.width * 0.25,
-              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3.0),
-                                  border: Border.all(
-                                      color: const Color(0xff00adef), width: 1.0),),
-                      child: new TextFormField(
-                        decoration: new InputDecoration(
-                          labelText: "Date",
-                          fillColor: Colors.white,
-                          hintText: 'DD',
-                          hintStyle: TextStyle(
-                            fontSize: 13.0,
-                            color: const Color(0xff00ADEF),
-                          ),
-                          border: InputBorder.none,
-                        ),
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(2),
-                        ],
-                        validator: (val) {
-                          if (val.length == 0) {
-                            return "Date field cannot be empty";
-                          } else {
-                            return null;
-                          }
-                        },
-                        keyboardType: TextInputType.phone,
-                        style: new TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.black,
-                          height: 2.0,
-                        ),
-                      )),
-                  Container(
-                      width: MediaQuery.of(context).size.width * 0.25,
-              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3.0),
-                                  border: Border.all(
-                                      color: const Color(0xff00adef), width: 1.0),),
-                      child: new TextFormField(
-                        decoration: new InputDecoration(
-                          labelText: "Month",
-                          fillColor: Colors.white,
-                          hintText: 'MM',
-                          hintStyle: TextStyle(
-                            fontSize: 13.0,
-                            color: const Color(0xff00ADEF),
-                          ),
-                          border: InputBorder.none,
-                        ),
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(2),
-                        ],
-                        validator: (val) {
-                          if (val.length == 0) {
-                            return "Month field cannot be empty";
-                          } else {
-                            return null;
-                          }
-                        },
-                        keyboardType: TextInputType.phone,
-                        style: new TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.black,
-                          height: 2.0,
-                        ),
-                      )),
-                  Container(
-                      width: MediaQuery.of(context).size.width * 0.40,
-              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3.0),
-                                  border: Border.all(
-                                      color: const Color(0xff00adef), width: 1.0),),
-                      child: new TextFormField(
-                        initialValue: '2020',
-                        decoration: new InputDecoration(
-                          labelText: "Year",
-                          fillColor: Colors.white,
-                          hintText: 'YYYY',
-                          hintStyle: TextStyle(
-                            fontSize: 13.0,
-                            color: const Color(0xff00ADEF),
-                          ),
-                          border: InputBorder.none,
-                        ),
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(4),
-                        ],
-                        validator: (val) {
-                          if (val.length == 0) {
-                            return "Year field cannot be empty";
-                          } else {
-                            return null;
-                          }
-                        },
-                        keyboardType: TextInputType.phone,
-                        style: new TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.black,
-                          height: 2.0,
-                        ),
-                      ))
-                ],
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3.0),
-                                  border: Border.all(
-                                      color: const Color(0xff00adef), width: 1.0),),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Address",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your Address',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xff00ADEF),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Address cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.text,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                  border: Border(
-                bottom: BorderSide(
-                  //                    <--- top side
-                  color: const Color(0xff00ADEF),
-                  width: 1.0,
-                ),
-              )),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Phone Number",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your phone number',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xff00ADEF),
-                  ),
-                  border: InputBorder.none,
-                ),
-                inputFormatters: [
-                  LengthLimitingTextInputFormatter(11),
-                ],
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Phone Number cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.phone,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3.0),
-                                  border: Border.all(
-                                      color: const Color(0xff00adef), width: 1.0),),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText: "Alternative Phone Number(Optional)",
-                  fillColor: Colors.white,
-                  hintText: 'Enter your alternative number',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xff00ADEF),
-                  ),
-                  border: InputBorder.none,
-                ),
-                keyboardType: TextInputType.phone,
-                inputFormatters: [
-                  LengthLimitingTextInputFormatter(11),
-                ],
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
-          new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
-              width: MediaQuery.of(context).size.width * 0.90,
-              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3.0),
-                                  border: Border.all(
-                                      color: const Color(0xff00adef), width: 1.0),),
-              child: new TextFormField(
-                decoration: new InputDecoration(
-                  labelText:
-                      "How many Rooms(includes Living Room, Kitchen, Toilet, BC)",
-                  fillColor: Colors.white,
-                  hintText: 'Enter number of rooms',
-                  hintStyle: TextStyle(
-                    fontSize: 13.0,
-                    color: const Color(0xff00ADEF),
-                  ),
-                  border: InputBorder.none,
-                ),
-                validator: (val) {
-                  if (val.length == 0) {
-                    return "Number of rooms filed cannot be empty";
-                  } else {
-                    return null;
-                  }
-                },
-                keyboardType: TextInputType.number,
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
-                  height: 2.0,
-                ),
-              )),
+          BoxTextInput(label: 'Name', optional: false, small: false),
+          Column(
+             children:<Widget>[     new Container(
+          margin: EdgeInsets.only(
+            bottom: MediaQuery.of(context).size.height * 0.01,
+            top: MediaQuery.of(context).size.height * 0.01,
+          ),
+          width: MediaQuery.of(context).size.width * 0.90,
+          child: Text('Appointment Date',
+              style: TextStyle(fontSize: 14.0, color: Colors.black)),
+           ),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.spaceAround,
+             children: <Widget>[
+               BoxNumberInput(label: 'Date(DD)', optional: false, small: true),
+               BoxNumberInput(label: 'Month(MM)', optional: false, small: true),
+               BoxNumberInput(label: 'Year(YYYY)', optional: false, small: true),
+             ],
+           )
+           ] ),
+           BoxTextInput(label: 'Address', optional: false, small: false),
+           BoxNumberInput(label: 'Phone Number', optional: false, small: false),
+            BoxNumberInput(label: 'Alternate Phone Number',optional: true, small: false),
+             BoxNumberInput(label: 'How Many rooms(includes Living Room,Kitchen,Toilet,BQ)', optional: false, small: false),
+
           Container(
             margin: EdgeInsets.only(
-              bottom: MediaQuery.of(context).size.height * 0.02,
+              bottom: MediaQuery.of(context).size.height * 0.01,
+             top: MediaQuery.of(context).size.height * 0.01,
             ),
             width: MediaQuery.of(context).size.width * 0.90,
             child: new Text(
@@ -448,7 +192,15 @@ class MyCustomFormState extends State<MyCustomForm> {
               style: new TextStyle(fontSize: 16.0, color: Colors.black),
             ),
           ),
-          Material(
+          Container(
+                                                        decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(3),
+                                ),
+                        margin: EdgeInsets.only(
+              bottom: MediaQuery.of(context).size.height * 0.01,
+             top: MediaQuery.of(context).size.height * 0.01,
+            ),
+            child:           Material(
             color: const Color(0xff00adef),
             child: InkWell(
                 onTap: () {
@@ -464,7 +216,9 @@ class MyCustomFormState extends State<MyCustomForm> {
            //         color: const Color(0xff00adef),
                   ),
                   child: Center(
-                    child: Row(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.0,),
+                      child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text('Regular Cleaning',
@@ -487,17 +241,27 @@ class MyCustomFormState extends State<MyCustomForm> {
                                 height: 20,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23 / 2),
-                                  color: Colors.white,
+                                  color: const Color(0xff00adef),
                                   border: Border.all(
                                       color: Colors.white, width: 3.0),
                                 ),
                               ),
                       ],
-                    ),
+                    )),
                   ),
                 )),
           ),
-          Material(
+          )
+,
+          Container(
+                                            decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(3),
+                                ),
+                        margin: EdgeInsets.only(
+              bottom: MediaQuery.of(context).size.height * 0.01,
+             top: MediaQuery.of(context).size.height * 0.01,
+            ),
+            child:           Material(
             color: const Color(0xff00adef),
             child: InkWell(
                 onTap: () {
@@ -506,17 +270,16 @@ class MyCustomFormState extends State<MyCustomForm> {
                   });
                 },
                 child: Container(
-                                margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
                   width: MediaQuery.of(context).size.width * 0.90,
                   height: 34,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(3.0),
-          //          color: const Color(0xff00adef),
+           //         color: const Color(0xff00adef),
                   ),
                   child: Center(
-                    child: Row(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.0,),
+                      child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text('Deep Cleaning',
@@ -539,16 +302,18 @@ class MyCustomFormState extends State<MyCustomForm> {
                                 height: 20,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23 / 2),
-                                  color: Colors.white,
+                                  color: const Color(0xff00adef),
                                   border: Border.all(
                                       color: Colors.white, width: 3.0),
                                 ),
                               ),
                       ],
-                    ),
+                    )),
                   ),
                 )),
-          ),  Container(
+          ),
+          ),
+          Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(9.0),
             ),
