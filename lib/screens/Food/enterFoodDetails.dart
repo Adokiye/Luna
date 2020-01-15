@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../components/buttons/scheduleButton.dart';
 import '../../components/BottomNavbar/bottomnavbar.dart';
+import '../../components/AppBar/appBar.dart';
+
+
 
 class EnterFoodDetails extends StatefulWidget {
   EnterFoodDetails({Key key, this.title}) : super(key: key);
@@ -37,7 +40,7 @@ class _EnterFoodDetailsState extends State<EnterFoodDetails> {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             child: AppBar(
-              title: new Image.asset('assets/images/logo.png', height: 60),
+              title: AppBarComponent(),
               elevation: 25.0,
               backgroundColor: const Color(0xff00ADEF),
               centerTitle: true,
@@ -88,13 +91,15 @@ class MyCustomFormState extends State<MyCustomForm> {
     // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: Column(
+      child: Container(
+        child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           new Container(
               margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-                top: MediaQuery.of(context).size.height * 0.02,
+                bottom: MediaQuery.of(context).size.height * 0.05,
+                top: MediaQuery.of(context).size.height * 0.05,
               ),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
@@ -132,7 +137,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               )),
           new Container(
               margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
+                bottom: MediaQuery.of(context).size.height * 0.05,
               ),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
@@ -173,7 +178,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               )),
           new Container(
               margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
+                bottom: MediaQuery.of(context).size.height * 0.05,
               ),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
@@ -207,7 +212,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               )),
           new Container(
               margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
+                bottom: MediaQuery.of(context).size.height * 0.05,
               ),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
@@ -245,7 +250,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               )),
           Container(
               margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
+                bottom: MediaQuery.of(context).size.height * 0.05,
               ),
               child: new Image.asset(
                 'assets/images/foodIcon.png',
@@ -271,7 +276,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 text: 'PROCEED'),
           ),
         ],
-      ),
+       ) ),
     );
   }
 }

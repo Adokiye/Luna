@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luno/screens/laundry/numberOfClothes.dart';
 
 class Trad extends StatefulWidget {
   Trad({Key key, this.title}) : super(key: key);
@@ -31,7 +32,15 @@ class _TradState extends State<Trad> {
     return SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
+            Material(
+         //   elevation: 1.0,
+            child: new InkWell(
+                                  onTap: () {
+                      Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'Native',),
+    ));
+                    },
+              child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/native.png'),
@@ -68,6 +77,8 @@ class _TradState extends State<Trad> {
                       ),
                     )
                   ])),
+            ),
+            )
             ),
             
           ],

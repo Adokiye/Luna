@@ -50,6 +50,9 @@ class Schedule extends StatelessWidget {
                             ),
                           )
                           ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children:<Widget>[
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(9.0),
@@ -61,6 +64,7 @@ class Schedule extends StatelessWidget {
                                 text: 'SCHEDULE PICKUP'),
                           ),
                                                     Container(
+                            margin: EdgeInsets.only(top: 15),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(9.0),
                             ),
@@ -70,6 +74,9 @@ class Schedule extends StatelessWidget {
                                 },
                                 text: 'TRACK YOUR ORDER'),
                           ),
+                            ]
+                          ),
+
                           BottomNavBar()
                         ],
                       ),

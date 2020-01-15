@@ -9,6 +9,7 @@ import '../../../components/TextInputs/boxEmailInput.dart';
 import '../../../components/TextInputs/boxNumberInput.dart';
 import '../../../components/TextInputs/boxTextInput.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import '../../../components/AppBar/appBar.dart';
 
 class PickUpDetails extends StatefulWidget {
   PickUpDetails({Key key, this.title}) : super(key: key);
@@ -44,7 +45,7 @@ class _PickUpDetailsState extends State<PickUpDetails> {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             child: AppBar(
-              title: new Image.asset('assets/images/logo.png', height: 60),
+              title: AppBarComponent(),
               elevation: 25.0,
               backgroundColor: const Color(0xff00ADEF),
               centerTitle: true,
@@ -65,35 +66,38 @@ class _PickUpDetailsState extends State<PickUpDetails> {
                                 margin: EdgeInsets.only(bottom: 60),
                 child: PickUpForm()),
                ] )),
-          Positioned(
-              bottom: 0,
-              child: InkWell(
-                  onTap: () {
-                    //       Navigator.pushNamed(context, '/pay');
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 45.0,
-                    color: const Color(0xff00ADEF),
-                    child: Padding(
-                      padding:
-                          EdgeInsets.only(top: 10.0, left: 22.0, right: 22.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text('TOTAL',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                )),
-                            Text('N4000',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                ))
-                          ]),
-                    ),
-                  ))),
+              Positioned(
+                  bottom: 0,
+                  child: Material(
+               color: const  Color(0xff00adef),
+                    child: InkWell(
+                      onTap: () {
+                                  Navigator.pushNamed(context, '/pay');
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                                                margin: EdgeInsets.only(top: 10.0),
+                        height: 34.0,
+                        color: const Color(0xff00ADEF),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0.0, left: 22.0, right: 22.0),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text('TOTAL',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    )),
+                                Text('N4000',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ))
+                              ]),
+                        ),
+                      )))),
           Positioned(
             bottom: 10,
             child: Container(
@@ -186,7 +190,7 @@ class PickUpFormState extends State<PickUpForm> {
           BoxEmailInput(label: 'EMAIL', optional: false, small: false),
           Container(
               width: MediaQuery.of(context).size.width,
-     //         height: 200,
+             height: 200,
               margin: EdgeInsets.symmetric(vertical: 10.0),
               decoration: BoxDecoration(
                 boxShadow: [
@@ -320,23 +324,23 @@ class PickUpFormState extends State<PickUpForm> {
                   );
                 },
               )),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(9.0),
-            ),
-            child: ScheduleButton(
-                onPressed: () {
-                  // Validate returns true if the form is valid, or false
-                  // otherwise.
-                  if (_formKey.currentState.validate()) {
-                    // If the form is valid, display a Snackbar.
-                    // Scaffold.of(context).showSnackBar(
-                    //     SnackBar(content: Text('Processing Data')));
-                    Navigator.pushNamed(context, '/pay');
-                  }
-                },
-                text: 'PROCEED'),
-          ),
+          // Container(
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(9.0),
+          //   ),
+          //   child: ScheduleButton(
+          //       onPressed: () {
+          //         // Validate returns true if the form is valid, or false
+          //         // otherwise.
+          //         if (_formKey.currentState.validate()) {
+          //           // If the form is valid, display a Snackbar.
+          //           // Scaffold.of(context).showSnackBar(
+          //           //     SnackBar(content: Text('Processing Data')));
+          //           Navigator.pushNamed(context, '/pay');
+          //         }
+          //       },
+          //       text: 'PROCEED'),
+          // ),
         ],
       ),
     );

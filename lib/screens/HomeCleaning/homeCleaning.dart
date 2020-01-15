@@ -6,6 +6,8 @@ import '../../components/TextInputs/boxEmailInput.dart';
 import '../../components/TextInputs/boxNumberInput.dart';
 import '../../components/TextInputs/boxTextInput.dart';
 import 'package:flutter/services.dart';
+import '../../components/AppBar/appBar.dart';
+
 
 class HomeCleaning extends StatefulWidget {
   HomeCleaning({Key key, this.title}) : super(key: key);
@@ -41,7 +43,7 @@ class _HomeCleaningState extends State<HomeCleaning> {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: AppBar(
-                title: new Image.asset('assets/images/logo.png', height: 60),
+                title: AppBarComponent(),
                 elevation: 25.0,
                 backgroundColor: const Color(0xff00ADEF),
                 centerTitle: true,
@@ -99,22 +101,22 @@ class _HomeCleaningState extends State<HomeCleaning> {
               ),
               Positioned(
                   bottom: 0,
-                  child: InkWell(
-                      onTap: () {
-                        //          Navigator.pushNamed(context, '/pay');
-                      },
+          child: Material(
+                          color: const Color(0xff00ADEF),
+            child: InkWell(
+            onTap: () {Navigator.pushNamed(context, '/pay');},
                       child: Container(
                         width: MediaQuery.of(context).size.width,
 
                         height: 45.0,
-                        color: const Color(0xff00ADEF),
+                     //   color: const Color(0xff00ADEF),
                         child: Padding(
                           padding: EdgeInsets.only(
                               top: 10.0, left: 22.0, right: 22.0),
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Text('TOTAL',
+                                Text('PROCEED',
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
@@ -126,7 +128,7 @@ class _HomeCleaningState extends State<HomeCleaning> {
                                     ))
                               ]),
                         ),
-                      ))),
+               ) ))),
               Positioned(
                 bottom: 10,
                 child: Container(
@@ -207,10 +209,14 @@ class MyCustomFormState extends State<MyCustomForm> {
                                   borderRadius: BorderRadius.circular(3),
                                 ),
                         margin: EdgeInsets.only(
-              bottom: MediaQuery.of(context).size.height * 0.01,
+              bottom: MediaQuery.of(context).size.height * 0.02,
              top: MediaQuery.of(context).size.height * 0.01,
             ),
             child:           Material(
+                                    shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(5.0),
+         //   side: BorderSide(color: Colors.red)
+            ),
             color: const Color(0xff00adef),
             child: InkWell(
                 onTap: () {
@@ -220,7 +226,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.90,
-                  height: 34,
+                  height: 45,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(3.0),
            //         color: const Color(0xff00adef),
@@ -268,10 +274,17 @@ class MyCustomFormState extends State<MyCustomForm> {
                                   borderRadius: BorderRadius.circular(3),
                                 ),
                         margin: EdgeInsets.only(
-              bottom: MediaQuery.of(context).size.height * 0.02,
-             top: MediaQuery.of(context).size.height * 0.02,
+             bottom: MediaQuery.of(context).size.height * 0.02,
+       //    top: MediaQuery.of(context).size.height * 0.02,
             ),
             child:           Material(
+                      shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(5.0),
+         //   side: BorderSide(color: Colors.red)
+            ),
+                        //          borderRadius: BorderRadius.circular(3.0),
+           //         color: const Color(0xff00adef),
+                  
             color: const Color(0xff00adef),
             child: InkWell(
                 onTap: () {
@@ -281,7 +294,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.90,
-                  height: 34,
+                  height: 45,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(3.0),
            //         color: const Color(0xff00adef),
@@ -329,9 +342,13 @@ class MyCustomFormState extends State<MyCustomForm> {
                                 ),
                         margin: EdgeInsets.only(
               bottom: MediaQuery.of(context).size.height * 0.02,
-             top: MediaQuery.of(context).size.height * 0.02,
+      //       top: MediaQuery.of(context).size.height * 0.02,
             ),
             child:           Material(
+                                    shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(5.0),
+         //   side: BorderSide(color: Colors.red)
+            ),
             color: const Color(0xff00adef),
             child: InkWell(
                 onTap: () {
@@ -341,7 +358,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.90,
-                  height: 34,
+                  height: 45,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(3.0),
            //         color: const Color(0xff00adef),
@@ -389,9 +406,13 @@ class MyCustomFormState extends State<MyCustomForm> {
                                 ),
                         margin: EdgeInsets.only(
               bottom: MediaQuery.of(context).size.height * 0.02,
-             top: MediaQuery.of(context).size.height * 0.02,
+          //   top: MediaQuery.of(context).size.height * 0.02,
             ),
             child:           Material(
+                                    shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(5.0),
+         //   side: BorderSide(color: Colors.red)
+            ),
             color: const Color(0xff00adef),
             child: InkWell(
                 onTap: () {
@@ -401,7 +422,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.90,
-                  height: 34,
+                  height: 45,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(3.0),
            //         color: const Color(0xff00adef),
@@ -443,23 +464,23 @@ class MyCustomFormState extends State<MyCustomForm> {
                 )),
           ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(9.0),
-            ),
-            child: ScheduleButton(
-                onPressed: () {
-                  // Validate returns true if the form is valid, or false
-                  // otherwise.
-                  if (_formKey.currentState.validate()) {
-                    // If the form is valid, display a Snackbar.
-                    Scaffold.of(context).showSnackBar(
-                        SnackBar(content: Text('Processing Data')));
-                    Navigator.pushNamed(context, '/pay');
-                  }
-                },
-                text: 'PROCEED'),
-          ),
+          // Container(
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(9.0),
+          //   ),
+          //   child: ScheduleButton(
+          //       onPressed: () {
+          //         // Validate returns true if the form is valid, or false
+          //         // otherwise.
+          //         if (_formKey.currentState.validate()) {
+          //           // If the form is valid, display a Snackbar.
+          //           Scaffold.of(context).showSnackBar(
+          //               SnackBar(content: Text('Processing Data')));
+          //           Navigator.pushNamed(context, '/pay');
+          //         }
+          //       },
+          //       text: 'PROCEED'),
+          // ),
         ],
       ),
     );

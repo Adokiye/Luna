@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luno/screens/laundry/numberOfClothes.dart';
 
 class Others extends StatefulWidget {
   Others({Key key, this.title}) : super(key: key);
@@ -32,7 +33,15 @@ class _OthersState extends State<Others> {
       child: Center(
         child: Column(
           children: <Widget>[
-            Container(
+                        Material(
+         //   elevation: 1.0,
+            child: new InkWell(
+                                  onTap: () {
+                      Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'Duvet',),
+    ));
+                    },
+            child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/duvet.png'),
@@ -69,8 +78,16 @@ class _OthersState extends State<Others> {
                       ),
                     )
                   ])),
-            ),
-                        Container(
+            ))),
+            Material(
+         //   elevation: 1.0,
+            child: new InkWell(
+                                  onTap: () {
+                      Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'Socks',),
+    ));
+                    },
+                   child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/socks.png'),
@@ -99,7 +116,7 @@ class _OthersState extends State<Others> {
                         color: const Color(0xffF7BF14),
                       ),
                       child: Center(
-                        child: Text('N2000',
+                        child: Text('N100',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 13,
@@ -107,8 +124,8 @@ class _OthersState extends State<Others> {
                       ),
                     )
                   ])),
-            )
-          ],
+            ))
+            )],
         ),
       ),
     );

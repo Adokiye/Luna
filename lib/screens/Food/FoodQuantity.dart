@@ -3,6 +3,7 @@ import '../../components/BottomNavbar/bottomnavbar.dart';
 import '../../components/buttons/scheduleButton.dart';
 import '../../components/MeterBox/fixedMeterBox.dart';
 import '../../components/MeterBox/foodMeterBox.dart';
+import '../../components/AppBar/appBar.dart';
 
 class FoodQuantity extends StatefulWidget {
   FoodQuantity({Key key, this.title}) : super(key: key);
@@ -38,7 +39,7 @@ class _FoodQuantityState extends State<FoodQuantity> {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             child: AppBar(
-              title: new Image.asset('assets/images/logo.png', height: 60),
+              title: AppBarComponent(),
               elevation: 25.0,
               backgroundColor: const Color(0xff00ADEF),
               centerTitle: true,

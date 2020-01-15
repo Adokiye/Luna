@@ -7,6 +7,7 @@ import '../../components/Lists/Dress/Dress.dart';
 import '../../components/Lists/Kids/Kids.dart';
 import '../../components/Lists/Others/Others.dart';
 import '../../components/BottomNavbar/bottomnavbar.dart';
+import '../../components/AppBar/appBar.dart';
 
 class ClothTypes extends StatefulWidget {
   ClothTypes({Key key, this.title}) : super(key: key);
@@ -76,7 +77,7 @@ class _ClothTypesState extends State<ClothTypes> {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: AppBar(
-                title: new Image.asset('assets/images/logo.png', height: 60),
+                title: AppBarComponent(),
                 bottom: PreferredSize(
                     preferredSize: const Size.fromHeight(70.0),
                     child: Container(
@@ -488,6 +489,7 @@ class _ClothTypesState extends State<ClothTypes> {
                 children: <Widget>[
               Container(
                 height: MediaQuery.of(context).size.height,
+                margin: EdgeInsets.only(bottom: 60),
                 child: PageView(
                   controller: _pageController,
                   //    physics: ClampingScrollPhysics(),

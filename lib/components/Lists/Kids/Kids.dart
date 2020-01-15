@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luno/screens/laundry/numberOfClothes.dart';
 
 class Kids extends StatefulWidget {
   Kids({Key key, this.title}) : super(key: key);
@@ -31,7 +32,15 @@ class _KidsState extends State<Kids> {
     return SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
+                        Material(
+         //   elevation: 1.0,
+            child: new InkWell(
+                                  onTap: () {
+                      Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'Kids',),
+    ));
+                    },
+           child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/kids.png'),
@@ -70,7 +79,7 @@ class _KidsState extends State<Kids> {
                   ])),
             ),
             
-          ],
+             )) ],
         ),
     );
   }

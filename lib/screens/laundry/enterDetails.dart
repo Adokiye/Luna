@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../components/buttons/scheduleButton.dart';
+import '../../components/AppBar/appBar.dart';
 import '../../components/BottomNavbar/bottomnavbar.dart';
 
 class EnterDetails extends StatefulWidget {
@@ -37,7 +38,7 @@ class _EnterDetailsState extends State<EnterDetails> {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             child: AppBar(
-              title: new Image.asset('assets/images/logo.png', height: 60),
+              title: AppBarComponent(),
               elevation: 25.0,
               backgroundColor: const Color(0xff00ADEF),
               centerTitle: true,
@@ -127,7 +128,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
           new Container(
@@ -168,7 +169,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
           new Container(
@@ -202,7 +203,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
           new Container(
@@ -240,7 +241,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
           new Container(
@@ -271,7 +272,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
           Container(

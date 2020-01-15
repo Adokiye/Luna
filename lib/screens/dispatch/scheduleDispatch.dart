@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../components/buttons/scheduleButton.dart';
 import '../../components/BottomNavbar/bottomnavbar.dart';
-
+// 09025665109
 class ScheduleDispatch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -54,6 +54,9 @@ class ScheduleDispatch extends StatelessWidget {
                               fit: BoxFit.contain,
                             ),
                           )),
+                                                    Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children:<Widget>[
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(9.0),
@@ -64,15 +67,18 @@ class ScheduleDispatch extends StatelessWidget {
                                 },
                                 text: 'SCHEDULE DISPATCH PICKUP'),
                           ),
-                          Container(
+                                                    Container(
+                            margin: EdgeInsets.only(top: 15),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(9.0),
                             ),
                             child: ScheduleButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/salonOrders');
+                                  Navigator.pushNamed(context, '/laundryOrders');
                                 },
                                 text: 'TRACK YOUR ORDER'),
+                          ),
+                            ]
                           ),
                           BottomNavBar()
                         ],

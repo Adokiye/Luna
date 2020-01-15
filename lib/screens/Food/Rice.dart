@@ -82,7 +82,7 @@ class _RiceState extends State<Rice> {
                         margin: EdgeInsets.only(bottom: 10.0),
                         width: MediaQuery.of(context).size.width * 0.90,
                         child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             new Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -131,7 +131,7 @@ class _RiceState extends State<Rice> {
                         margin: EdgeInsets.only(bottom: 10.0),
                         width: MediaQuery.of(context).size.width * 0.90,
                         child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             new Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -180,7 +180,7 @@ class _RiceState extends State<Rice> {
                         margin: EdgeInsets.only(bottom: 10.0),
                         width: MediaQuery.of(context).size.width * 0.90,
                         child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             new Row(
                                     mainAxisAlignment: MainAxisAlignment.center,

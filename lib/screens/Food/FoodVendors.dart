@@ -68,10 +68,10 @@ class _FoodVendorsState extends State<FoodVendors> {
     return Column(
           children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(bottom: 10.0),
+                        margin: EdgeInsets.only(bottom: 0.0),
                         width: MediaQuery.of(context).size.width * 0.90,
                         child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             new Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +83,7 @@ class _FoodVendorsState extends State<FoodVendors> {
                                                                                 onChanged: (val){setState((){setState((){foodVendor = val;});});},
                                       ),
                                       Container(
-                                        margin: EdgeInsets.only(left: 10.0),
+                                        margin: EdgeInsets.only(left: 0.0),
                                         child: new Text(
                                           'T and K',
                                           style: new TextStyle(
@@ -103,7 +103,7 @@ class _FoodVendorsState extends State<FoodVendors> {
                                         onChanged: (val){setState((){setState((){foodVendor = val;});});},
                                       ),
                                       Container(
-                                        margin: EdgeInsets.only(left: 10.0),
+                                        margin: EdgeInsets.only(left: 0.0),
                                         child: new Text(
                                           'CHRONICLES',
                                           style: new TextStyle(
@@ -117,10 +117,10 @@ class _FoodVendorsState extends State<FoodVendors> {
                         )                                  
                       ),
                                             Container(
-                        margin: EdgeInsets.only(bottom: 10.0),
+                        margin: EdgeInsets.only(bottom: 0.0),
                         width: MediaQuery.of(context).size.width * 0.90,
                         child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             new Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -132,7 +132,7 @@ class _FoodVendorsState extends State<FoodVendors> {
                                                                                 onChanged: (val){setState((){setState((){foodVendor = val;});});},
                                       ),
                                       Container(
-                                        margin: EdgeInsets.only(left: 10.0),
+                                        margin: EdgeInsets.only(left: 0.0),
                                         child: new Text(
                                           'T and K',
                                           style: new TextStyle(
@@ -152,7 +152,7 @@ class _FoodVendorsState extends State<FoodVendors> {
                                                                                 onChanged: (val){setState((){setState((){foodVendor = val;});});},
                                       ),
                                       Container(
-                                        margin: EdgeInsets.only(left: 10.0),
+                                        margin: EdgeInsets.only(left: 0.0),
                                         child: new Text(
                                           'DOMINOES',
                                           style: new TextStyle(
@@ -166,10 +166,10 @@ class _FoodVendorsState extends State<FoodVendors> {
                         )                                  
                       ),
                                             Container(
-                        margin: EdgeInsets.only(bottom: 10.0),
+                        margin: EdgeInsets.only(bottom: 0.0),
                         width: MediaQuery.of(context).size.width * 0.90,
                         child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             new Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -181,7 +181,7 @@ class _FoodVendorsState extends State<FoodVendors> {
                                                                                 onChanged: (val){setState((){setState((){foodVendor = val;});});},
                                       ),
                                       Container(
-                                        margin: EdgeInsets.only(left: 10.0),
+                                        margin: EdgeInsets.only(left: 0.0),
                                         child: new Text(
                                           'CHICKEN REPUBLIC',
                                           style: new TextStyle(
@@ -201,7 +201,7 @@ class _FoodVendorsState extends State<FoodVendors> {
                                                                                 onChanged: (val){setState((){setState((){foodVendor = val;});});},
                                       ),
                                       Container(
-                                        margin: EdgeInsets.only(left: 10.0),
+                                        margin: EdgeInsets.only(left: 0.0),
                                         child: new Text(
                                           'KFC',
                                           style: new TextStyle(

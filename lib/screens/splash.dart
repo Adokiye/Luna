@@ -19,9 +19,13 @@ class _SplashState extends State<Splash> {
     return Scaffold(
         body: Container(
             color: Colors.white,
+            width: MediaQuery.of(context).size.width,
             child: SafeArea(
-                child: Center(
-                    child: Column(
+                  child: Stack(
+
+                    children:<Widget>[ 
+                      Center(
+                        child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -52,7 +56,27 @@ class _SplashState extends State<Splash> {
                         AlignmentDirectional.topStart // or Alignment.topLeft
                     )
               ],
-            )))));
+            )),
+                          Positioned(
+
+                  bottom: 0,
+                  child:  Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 116.0,
+                          child: new Container(),
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/bottomSplash.png'),
+                              fit: BoxFit.cover,
+                            ),
+                     //      color: const Color(0xff00adef),
+                         ),
+                          )),
+            
+            ]),
+        //    )
+            
+            )));
   }
 
   void onClose() {

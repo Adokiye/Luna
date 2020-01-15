@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luno/screens/laundry/numberOfClothes.dart';
 
 class Trousers extends StatefulWidget {
   Trousers({Key key, this.title}) : super(key: key);
@@ -33,7 +34,15 @@ class _TrousersState extends State<Trousers> {
         child: Column(
           
           children: <Widget>[
-            Container(
+            Material(
+         //   elevation: 1.0,
+            child: new InkWell(
+                                  onTap: () {
+                      Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'Trousers',),
+    ));
+                    },
+              child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/trousers.png'),
@@ -46,7 +55,7 @@ class _TrousersState extends State<Trousers> {
               child: Padding(
                   padding: EdgeInsets.only(bottom: 10.0, left: 22.0, right: 22.0),
                   child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                     Text('Trousers',
                         style: TextStyle(
@@ -54,11 +63,11 @@ class _TrousersState extends State<Trousers> {
                           fontSize: 20,
                         )),
                     Container(
-                                            width: 58.0,
+                      width: 58.0,
                       height: 58.0,
                       decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff00ADEF), width: 4.0),
                         borderRadius: BorderRadius.circular(29.0),
+                        border: Border.all(color: const Color(0xff00ADEF), width: 4.0),
                         color: const Color(0xffF7BF14),
                       ),
                       child: Center(
@@ -70,7 +79,9 @@ class _TrousersState extends State<Trousers> {
                       ),
                     )
                   ])),
+            ),
             )
+            ),
           ],
         ),
       ),

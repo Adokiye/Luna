@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luno/screens/laundry/numberOfClothes.dart';
 
 class Suits extends StatefulWidget {
   Suits({Key key, this.title}) : super(key: key);
@@ -29,9 +30,19 @@ class _SuitsState extends State<Suits> {
     // than having to individually change instances of widgets.
 
     return SingleChildScrollView(
+      child: Center(
         child: Column(
+          
           children: <Widget>[
-            Container(
+            Material(
+         //   elevation: 1.0,
+            child: new InkWell(
+                                  onTap: () {
+                      Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'Suits',),
+    ));
+                    },
+              child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/suits.png'),
@@ -69,9 +80,11 @@ class _SuitsState extends State<Suits> {
                     )
                   ])),
             ),
-            
+            )
+            ),
           ],
         ),
+      ),
     );
   }
 }

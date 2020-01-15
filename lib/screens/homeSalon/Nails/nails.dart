@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../components/BottomNavbar/bottomnavbar.dart';
 import '../../../components/HeaderBox/headerbox.dart';
 import '../../../components/MeterBox/meterbox.dart';
+import '../../../components/AppBar/appBar.dart';
 
 class Nails extends StatefulWidget {
   Nails({Key key, this.title}) : super(key: key);
@@ -37,18 +38,18 @@ class _NailsState extends State<Nails> {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: AppBar(
-                title: new Image.asset('assets/images/logo.png', height: 60),
+                title: AppBarComponent(),
                 elevation: 25.0,
                 backgroundColor: const Color(0xff00ADEF),
                 centerTitle: true,
               ),
             )),
         body: SafeArea(
-            child: Center(
-              child: Stack(
+            child: Stack(
                 //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-              Container(
+              Center(
+                child: Container(
                 height: MediaQuery.of(context).size.height,
                                 margin: EdgeInsets.only(bottom: 60),
                 child: SingleChildScrollView(
@@ -89,7 +90,7 @@ class _NailsState extends State<Nails> {
                     ],
                   ),
                 ),
-              ),
+              )),
               Positioned(
                   bottom: 0,
                   child: InkWell(
@@ -123,7 +124,7 @@ class _NailsState extends State<Nails> {
                     width: MediaQuery.of(context).size.width * 0.90,
                     child: BottomNavBar()),
               ),
-            ]))));
+            ])));
 
     // Here we take the value from the MyHomePage object that was created by
     // the App.build method, and use it to set our appbar title.

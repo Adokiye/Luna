@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../components/BottomNavbar/bottomnavbar.dart';
-
+import '../../components/AppBar/appBar.dart';
 class TypeOfHomeSalon extends StatefulWidget {
   TypeOfHomeSalon({Key key, this.title}) : super(key: key);
 
@@ -35,7 +35,7 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: AppBar(
-                title: new Image.asset('assets/images/logo.png', height: 60),
+                title: AppBarComponent(),
                 elevation: 25.0,
                 backgroundColor: const Color(0xff00ADEF),
                 centerTitle: true,
@@ -49,7 +49,7 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                 height: MediaQuery.of(context).size.height,
                 child: SingleChildScrollView(
                   child: Column(
-                    //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       new InkWell(
                         onTap: () {Navigator.pushNamed(context, '/genthaircut');},
@@ -68,6 +68,7 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                               padding: EdgeInsets.only(
                                   bottom: 10.0, left: 22.0, right: 22.0),
                               child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -102,8 +103,9 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                           height: 132.0,
                           child: Padding(
                               padding: EdgeInsets.only(
-                                  bottom: 10.0, left: 22.0, right: 22.0),
+                                  bottom: 0.0, left: 22.0, right: 22.0),
                               child: Row(
+                                                        crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -133,6 +135,7 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                               padding: EdgeInsets.only(
                                   bottom: 10.0, left: 22.0, right: 22.0),
                               child: Row(
+                                                        crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -160,6 +163,7 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                               padding: EdgeInsets.only(
                                   bottom: 10.0, left: 22.0, right: 22.0),
                               child: Row(
+                                                        crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[

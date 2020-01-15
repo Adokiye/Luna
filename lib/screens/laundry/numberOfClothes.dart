@@ -1,26 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../components/BottomNavbar/bottomnavbar.dart';
 import '../../components/buttons/scheduleButton.dart';
+import '../../components/AppBar/appBar.dart';
 
-class NumberOfClothes extends StatefulWidget {
-  NumberOfClothes({Key key, this.title}) : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
+class NumberOfClothes extends StatelessWidget {
+    // Declare a field that holds the Todo.
   final String title;
 
-  @override
-  _NumberOfClothesState createState() => _NumberOfClothesState();
-}
+  // In the constructor, require a Todo.
+  NumberOfClothes({Key key, @required this.title}) : super(key: key);
 
-class _NumberOfClothesState extends State<NumberOfClothes> {
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -36,25 +27,28 @@ class _NumberOfClothesState extends State<NumberOfClothes> {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             child: AppBar(
-              title: new Image.asset('assets/images/logo.png', height: 60),
+              title: AppBarComponent(),
               elevation: 25.0,
               backgroundColor: const Color(0xff00ADEF),
               centerTitle: true,
             ),
           )),
       body: SafeArea(
-          child: Center(
-        child: Stack(children: <Widget>[
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+        child: Stack(
+          children: <Widget>[
           SingleChildScrollView(
               child: Container(
-            //      height: MediaQuery.of(context).size.height,
+                 height: MediaQuery.of(context).size.height,
                    margin: EdgeInsets.only(bottom: 60.0),
-                  child: Column(
+                  child: Center(
+                    child: Column(
                     children: <Widget>[
                       Container(
-                          margin: EdgeInsets.symmetric(vertical: 20.0),
+                          margin: EdgeInsets.only(top: 10.0),
                           width: MediaQuery.of(context).size.width * (0.90),
-                          child: Text('SHIRTS',
+                          child: Text(title,
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18,
@@ -72,101 +66,18 @@ class _NumberOfClothesState extends State<NumberOfClothes> {
                       new ListTileItem(
                         title: "Starch only",
                       ),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 20.0),
-                          width: MediaQuery.of(context).size.width * (0.90),
-                          child: Text('TROUSERS',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                              ))),
-                      new ListTileItem(
-                        title: "Dry Clean only",
-                      ),
-                      new ListTileItem(
-                        title: "Dry Clean and Iron",
-                      ),
-                      new ListTileItem(
-                        title: "Iron only",
-                      ),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 20.0),
-                          width: MediaQuery.of(context).size.width * (0.90),
-                          child: Text('NATIVE',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                              ))),
-                      new ListTileItem(
-                        title: "Dry Clean only",
-                      ),
-                      new ListTileItem(
-                        title: "Dry Clean and Iron",
-                      ),
-                      new ListTileItem(
-                        title: "Iron only",
-                      ),
-                      new ListTileItem(
-                        title: "Starch only",
-                      ),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 20.0),
-                          width: MediaQuery.of(context).size.width * (0.90),
-                          child: Text('DRESS',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                              ))),
-                      new ListTileItem(
-                        title: "Dry Clean only",
-                      ),
-                      new ListTileItem(
-                        title: "Dry Clean and Iron",
-                      ),
-                      new ListTileItem(
-                        title: "Iron only",
-                      ),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 20.0),
-                          width: MediaQuery.of(context).size.width * (0.90),
-                          child: Text('SUITS',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                              ))),
-                      new ListTileItem(
-                        title: "Dry Clean only",
-                      ),
-                      new ListTileItem(
-                        title: "Dry Clean and Iron",
-                      ),
-                      new ListTileItem(
-                        title: "Iron only",
-                      ),
-                                                Container(
-                                                  margin: EdgeInsets.symmetric(vertical: 10.0),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(9.0),
-                            ),
-                            child: ScheduleButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/pay');
-                                },
-                                text: 'PROCEED'),
-                          ),
                     ],
-                  ))),
+           ) ))),
                                          Positioned(
           bottom: 0,  
-          child: InkWell(
+          child: Material(
+                          color: const Color(0xff00ADEF),
+            child: InkWell(
+            onTap: () {Navigator.pushNamed(context, '/pay');},
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: 45.0,
-              color: const Color(0xff00ADEF),
+
             child:      Padding(
               padding: EdgeInsets.only(top: 10.0, left: 22.0, right: 22.0),
               child:Row(
@@ -182,7 +93,7 @@ class _NumberOfClothesState extends State<NumberOfClothes> {
                           fontSize: 20,
                         ))]),
           ),
-          ))),
+                                          ) ))),
           Positioned(
             bottom: 10,
             child: Container(

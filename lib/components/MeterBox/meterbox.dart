@@ -47,21 +47,25 @@ class MeterBox extends StatelessWidget {
                   ],
                 ),),
                 Container(
+                  margin: EdgeInsets.only(top: 10.0),
                       width: MediaQuery.of(context).size.width,
                       child: Text(description, style: TextStyle(color: Colors.black, fontSize: 12),),),
                 Container(
                       width: MediaQuery.of(context).size.width * 1,
                       child: ListTileItem(),
                 ),
-                Container(
-                  height: 36.0,
-                      width: MediaQuery.of(context).size.width,
-                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(3.0),
-                ),
-                child: Center(
-                  child: Text('N2000', style: TextStyle(color: Colors.white, fontSize: 20.0),)
-                ),)
+          Container(
+            width: MediaQuery.of(context).size.width * (0.74),
+            height: 40,
+            margin: EdgeInsets.only(top: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.0),
+              color: const Color(0xff00adef),
+            ),
+            child: Center(
+              child: Text(amount.toString(), style: TextStyle(color: Colors.white, fontSize: 20, ),)
+            ),
+          )
               ],
             )));
   }
@@ -95,7 +99,7 @@ class _ListTileItemState extends State<ListTileItem> {
                     child: Container(
                       margin: EdgeInsets.only(right: 14.0),
                       width: 19.0,
-                      height: 19.0,
+                      //height: 19.0,
                       decoration: BoxDecoration(
                           borderRadius: new BorderRadius.circular(3.0),
                           color: const Color(0xffF7BF14)),
@@ -121,7 +125,7 @@ class _ListTileItemState extends State<ListTileItem> {
               onTap: () => setState(() => _itemCount++),
               child: Container(
                 width: 19.0,
-                height: 19.0,
+                //height: 19.0,
                 decoration: BoxDecoration(
                     borderRadius: new BorderRadius.circular(3.0),
                     color: const Color(0xffF7BF14)),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/BottomNavbar/bottomnavbar.dart';
+import '../components/AppBar/appBar.dart';
 
 class PaymentMethod extends StatefulWidget {
   PaymentMethod({Key key, this.title}) : super(key: key);
@@ -35,18 +36,18 @@ class _PaymentMethodState extends State<PaymentMethod> {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             child: AppBar(
-              title: new Image.asset('assets/images/logo.png', height: 60),
+              title: AppBarComponent(),
               elevation: 25.0,
               backgroundColor: const Color(0xff00ADEF),
               centerTitle: true,
             ),
           )),
       body: SafeArea(
-        child: Center(
-            child: Stack(
+        child: Stack(
           children: <Widget>[
             SingleChildScrollView(
-                child: Container(
+                child: Center(
+                  child: Container(
               height: MediaQuery.of(context).size.height,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -117,7 +118,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                     ),
                   )
                 ],
-              ),
+              )),
             )),
             Positioned(
                 bottom: 0,
@@ -132,7 +133,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Text('Checkout',
+                          Text('Total',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -152,7 +153,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                   child: BottomNavBar()),
             )
           ],
-        )),
+        ),
       ),
     );
 

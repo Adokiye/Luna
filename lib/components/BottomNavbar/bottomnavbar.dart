@@ -11,33 +11,8 @@ class BottomNavBar extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  Container(
-                                      //    alignment: Alignment(1.0, 1.0),
-                                      child: Center(
-                                        child: Icon(Icons.home,
-                                            color: const Color(0xFF0E3311).withOpacity(0)),
-                                      )),
-                                      SizedBox(
-                                        width: 45.0, height: 45.0,
-                                        child: RawMaterialButton(
-                              elevation: 3.0,
-                                    fillColor: const Color(0xff00ADEF),
-                                          shape: RoundedRectangleBorder(
-        borderRadius: new BorderRadius.circular(45.0/2),
-),
-                         //     highlightElevation: 1.0,
-                                                       onPressed: () {
-                                Navigator.pushReplacementNamed(context, '/home');
-                              },
-                              child:  Container(
-                                      width: 45.0,
-                                      height: 45.0,
-                                      //    alignment: Alignment(1.0, 1.0),
-                                      child: Center(
-                                        child: Icon(Icons.home,
-                                            color: Colors.white),
-                                      ))),)
-                                      ,
+                                  Spacer(),
+                                  Spacer(),
                                       SizedBox(
                                         width: 45.0, height: 45.0,
                                         child: RawMaterialButton(

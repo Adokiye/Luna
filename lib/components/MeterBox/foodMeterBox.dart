@@ -74,14 +74,12 @@ class _ListTileItemState extends State<ListTileItem> {
   Widget build(BuildContext context) {
     return new Row(
     //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(
-          'HOW MANY ',
-          style: TextStyle(
-              color: Colors.black, fontSize: 10.0, fontWeight: FontWeight.w700),
-        ),
+        
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             _itemCount != 0
                 ? new GestureDetector(
@@ -89,7 +87,7 @@ class _ListTileItemState extends State<ListTileItem> {
                     child: Container(
                       margin: EdgeInsets.only(right: 14.0),
                       width: 19.0,
-                      height: 19.0,
+                 //     height: 19.0,
                       decoration: BoxDecoration(
                           borderRadius: new BorderRadius.circular(3.0),
                           color: const Color(0xffF7BF14)),
@@ -111,23 +109,27 @@ class _ListTileItemState extends State<ListTileItem> {
                 ),
               ),
             ),
-            new GestureDetector(
+                new GestureDetector(
               onTap: () => setState(() => _itemCount++),
               child: Container(
-                width: 19.0,
-                height: 19.0,
-                decoration: BoxDecoration(
-                    borderRadius: new BorderRadius.circular(3.0),
-                    color: const Color(0xffF7BF14)),
-                child: Center(
-                  child: Text(
+                      width: 19.0,
+       //               height: 19.0,
+                      decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.circular(3.0),
+                          color: const Color(0xffF7BF14)),
+                child:  Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[ Text(
                     '+',
                     style: TextStyle(color: Colors.white, fontSize: 20.0),
-                  ),
+                     ) ]
+                    
+                
                 ),
-              ),
-            )
-          ],
+            
+            ))
+             ],
         )
       ],
     );

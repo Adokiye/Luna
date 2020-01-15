@@ -10,6 +10,7 @@ import './FoodVendors.dart';
 import './Rice.dart';
 import './Soups.dart';
 import './Swallow.dart';
+import '../../components/AppBar/appBar.dart';
 
 class FoodMenu extends StatefulWidget {
   FoodMenu({Key key, this.title}) : super(key: key);
@@ -30,6 +31,8 @@ class FoodMenu extends StatefulWidget {
 }
 
 class _FoodMenuState extends State<FoodMenu> {
+    bool _vendor = false;
+   bool _menu = false;
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -44,6 +47,28 @@ class _FoodMenuState extends State<FoodMenu> {
    int meat = 0;
    int drinks = 0;
    int soups = 0;
+ 
+   
+   void _toggleMenu() {
+  setState(() {
+    if (_menu) {
+      _menu = false;
+    } else {
+      _menu = true;
+    }
+  });
+}
+
+   void _toggleVendor() {
+  setState(() {
+    if (_vendor) {
+      _vendor = false;
+    } else {
+      _vendor = true;
+    }
+  });
+}
+
 
    void swallowSetter(int value){
      setState(() {
@@ -82,35 +107,47 @@ class _FoodMenuState extends State<FoodMenu> {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: AppBar(
-                title: new Image.asset('assets/images/logo.png', height: 60),
+                title: AppBarComponent(),
                 elevation: 25.0,
                 backgroundColor: const Color(0xff00ADEF),
                 centerTitle: true,
               ),
             )),
         body: SafeArea(
-            child: Center(
-              child: Stack(
+            child: Stack(
                 //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-              Container(
+              Center(
+                child: Container(
                 height: MediaQuery.of(context).size.height,
                 child: SingleChildScrollView(
                   child: Column(
                     //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
+                      Material(
+                        child: InkWell(
+                          onTap:(){_toggleVendor();},
+                          child: 
                       HeaderBox(text: 'FOOD VENDORS'), 
-                      FoodVendors(),
+                        ),
+                      ),
+                 _vendor ?  FoodVendors() : new Container(),
+                                            Material(
+                        child: InkWell(
+                          onTap:(){_toggleMenu();},
+                          child: 
                       HeaderBox(text: 'MENU LIST'),
-                      Swallow(),
-                      Soups(),
-                      Rice(),
-                      Meat(),
-                      Drinks(),
+                        ),
+                      ),
+                     _menu ? Swallow()  : new Container(),
+                     _menu ? Soups()  : new Container(),
+                    _menu ? Rice()  : new Container(),
+                  _menu ?    Meat()  : new Container(),
+                  _menu ?    Drinks()  : new Container(),
                     ],
                   ),
                 ),
-              ),
+              )),
               Positioned(
                   bottom: 0,
                   child: InkWell(
@@ -146,7 +183,7 @@ class _FoodMenuState extends State<FoodMenu> {
                     width: MediaQuery.of(context).size.width * 0.90,
                     child: BottomNavBar()),
               ),
-            ]))));
+            ])));
 
     // Here we take the value from the MyHomePage object that was created by
     // the App.build method, and use it to set our appbar title.

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luno/screens/laundry/numberOfClothes.dart';
 
 class Shirts extends StatefulWidget {
   Shirts({Key key, this.title}) : super(key: key);
@@ -31,7 +32,15 @@ class _ShirtsState extends State<Shirts> {
     return SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
+            Material(
+         //   elevation: 1.0,
+            child: new InkWell(
+                                  onTap: () {
+                      Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'Shirts',),
+    ));
+                    },
+              child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/shirt.png'),
@@ -69,7 +78,17 @@ class _ShirtsState extends State<Shirts> {
                     )
                   ])),
             ),
-                        Container(
+            )
+            ),
+            Material(
+         //   elevation: 1.0,
+            child: new InkWell(
+                                  onTap: () {
+                      Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'T-Shirts',),
+    ));
+                    },
+              child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/shirt.png'),
@@ -84,7 +103,7 @@ class _ShirtsState extends State<Shirts> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                    Text('Shirts',
+                    Text('T-Shirts',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
@@ -98,7 +117,7 @@ class _ShirtsState extends State<Shirts> {
                         color: const Color(0xffF7BF14),
                       ),
                       child: Center(
-                        child: Text('N2000',
+                        child: Text('N1000',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 13,
@@ -107,81 +126,7 @@ class _ShirtsState extends State<Shirts> {
                     )
                   ])),
             ),
-                        Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/shirt.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              margin: EdgeInsets.symmetric(vertical: 15.0),
-              width: MediaQuery.of(context).size.width,
-              height: 132.0,
-              child: Padding(
-                  padding: EdgeInsets.only(bottom: 10.0, left: 22.0, right: 22.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                    Text('Shirts',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        )),
-                    Container(
-                      width: 58.0,
-                      height: 58.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(29.0),
-                        border: Border.all(color: const Color(0xff00ADEF), width: 4.0),
-                        color: const Color(0xffF7BF14),
-                      ),
-                      child: Center(
-                        child: Text('N2000',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13,
-                            )),
-                      ),
-                    )
-                  ])),
-            ),
-                        Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/shirt.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              margin: EdgeInsets.symmetric(vertical: 15.0),
-              width: MediaQuery.of(context).size.width,
-              height: 132.0,
-              child: Padding(
-                  padding: EdgeInsets.only(bottom: 10.0, left: 22.0, right: 22.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                    Text('Shirts',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        )),
-                    Container(
-                      width: 58.0,
-                      height: 58.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(29.0),
-                        border: Border.all(color: const Color(0xff00ADEF), width: 4.0),
-                        color: const Color(0xffF7BF14),
-                      ),
-                      child: Center(
-                        child: Text('N2000',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13,
-                            )),
-                      ),
-                    )
-                  ])),
+            )
             ),
           ],
         ),
