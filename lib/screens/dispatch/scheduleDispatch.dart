@@ -74,7 +74,7 @@ class ScheduleDispatch extends StatelessWidget {
                             ),
                             child: ScheduleButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/laundryOrders');
+                                  Navigator.pushNamed(context, '/trackdispatch');
                                 },
                                 text: 'TRACK YOUR ORDER'),
                           ),

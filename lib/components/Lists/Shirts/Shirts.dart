@@ -60,6 +60,22 @@ class _ShirtsState extends State<Shirts> {
                           color: Colors.white,
                           fontSize: 20,
                         )),
+                                            Container(
+                      width: 50.0,
+                      height: 50.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25.0),
+                        border: Border.all(color: const Color(0xff00ADEF), width: 4.0),
+                        color: const Color(0xffF7BF14),
+                      ),
+                      child: Center(
+                        child: Text('2',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                            )),
+                      ),
+                    ),
                     Container(
                       width: 58.0,
                       height: 58.0,

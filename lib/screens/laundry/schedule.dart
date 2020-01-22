@@ -70,7 +70,7 @@ class Schedule extends StatelessWidget {
                             ),
                             child: ScheduleButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/laundryOrders');
+                                  Navigator.pushNamed(context, '/trackyourorder');
                                 },
                                 text: 'TRACK YOUR ORDER'),
                           ),

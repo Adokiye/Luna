@@ -20,7 +20,10 @@ import 'screens/Food/FoodSelection.dart';
 import 'screens/HomeCleaning/homeCleaning.dart';
 import 'screens/PostConstruction/postConstruction.dart';
 import 'screens/homeSalon/typeOfHomeSalon.dart';
+import 'screens/laundry/trackOrder.dart';
+import 'screens/dispatch/trackOrder.dart';
 import 'components/Success.dart';
+import 'screens/orderProgress.dart';
 import 'screens/splash.dart';
 
 void main() => runApp(MyApp());
@@ -64,7 +67,10 @@ class MyApp extends StatelessWidget {
         '/homecleaning': (context) => HomeCleaning(),
         '/scheduledispatch': (context) => ScheduleDispatch(),
         '/postconstruction': (context) => PostConstruction(),
-        '/pickupdetails': (context) => PickUpDetails() 
+        '/pickupdetails': (context) => PickUpDetails(),
+        '/trackyourorder': (context) => TrackOrder(), 
+        '/orderprogress': (context) => OrderProgress(),
+        '/trackdispatch': (context) => TrackDispatchOrder(),
       },
       //    home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
