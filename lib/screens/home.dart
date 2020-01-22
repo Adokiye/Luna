@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../components/AppBar/appBar.dart';
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -30,249 +31,169 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
 
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.0), // here the desired height
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.0),
-            child: AppBar(
-              automaticallyImplyLeading: false,
-              title: AppBarComponent(),
-              elevation: 25.0,
-              backgroundColor: const Color(0xff00ADEF),
-              centerTitle: true,
-            ),
-          )),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Container(
-                width: MediaQuery.of(context).size.width * 0.90,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Material(
-                      child: new InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/schedule');
-                        },
-                        child: Container(
-                          child: Row(children: <Widget>[
-                            Container(
-                                margin: EdgeInsets.only(
-                                    right: MediaQuery.of(context).size.width *
-                                        0.04),
-                                child: new Image.asset(
-                                  'assets/images/laundry.png',
-                                  height: 40,
-                                  width: 40,
-                                  fit: BoxFit.contain,
-                                )),
-                            Text(
-                              'Laundry/Dry cleaning',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.50,
-                                  fontWeight: FontWeight.w700),
-                            )
-                          ]),
-                        )),  ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/homecleaning');
-                      },
-                      child: Container(
-                        width: 140,
-                        child: Row(
-                            //                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                  margin: EdgeInsets.only(
-                                      right: MediaQuery.of(context).size.width *
-                                          0.02),
-                                  child: new Image.asset(
-                                    'assets/images/houseCleaning.png',
-                                    height: 40,
-                                    width: 40,
-                                    fit: BoxFit.contain,
-                                  )),
-                                     Container(
-                                  width: MediaQuery.of(context).size.width * 0.20,
-                                  child: Text(
-                                'House Cleaning',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 10.50,
-                                    fontWeight: FontWeight.w700),
-                              )
-                                )
-                              
-                            ]),
-                      ),
-                    )
-                  ],
-                ),
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(80.0), // here the desired height
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 10.0),
+              child: AppBar(
+                automaticallyImplyLeading: false,
+                title: AppBarComponent(),
+                elevation: 25.0,
+                backgroundColor: const Color(0xff00ADEF),
+                centerTitle: true,
               ),
-              Container(
-                  margin: EdgeInsets.symmetric(vertical: 15.0),
-                  width: MediaQuery.of(context).size.width * 0.90,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      InkWell(
+            )),
+        body: Container(
+          color: Colors.white,
+          child: SafeArea(
+              child: SingleChildScrollView(
+            child: Center(
+              child: Container(
+            //    height: MediaQuery.of(context).size.height,
+                child: Column(
+            //    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                                       margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.009),
+                    width: MediaQuery.of(context).size.width * 0.95,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/enterfooddetails');
+                            Navigator.pushNamed(context, '/schedule');
                           },
-                          child: Row(children: <Widget>[
-                            Container(
-                                margin: EdgeInsets.only(
-                                    right: MediaQuery.of(context).size.width *
-                                        0.04),
-                                child: new Image.asset(
-                                  'assets/images/foodDelivery.png',
-                                  height: 40,
-                                  width: 40,
-                                  fit: BoxFit.contain,
-                                )),
-
-                             
-                            Text(
-                              'Food Delivery',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.50,
-                                  fontWeight: FontWeight.w700),
-                            )
-                          ])),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/homeSalon');
-                        },
-                        child: Container(
-                          width: 140,
-                          child: Row(
-                              //                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Container(
-                                    margin: EdgeInsets.only(
-                                        right:
-                                            MediaQuery.of(context).size.width *
-                                                0.04),
-                                    child: new Image.asset(
-                                      'assets/images/homeSalon.png',
-                                      height: 40,
-                                      width: 40,
-                                      fit: BoxFit.contain,
-                                    )),
-                                Text(
-                                  'Home Salon',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 10.50,
-                                      fontWeight: FontWeight.w700),
-                                )
-                              ]),
-                        ),
-                      ),
-                    ],
-                  )),
-              Container(
-                  margin: EdgeInsets.only(bottom: 15.0),
-                  width: MediaQuery.of(context).size.width * 0.90,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/scheduledispatch');
-                        },
-                        child: Row(children: <Widget>[
-                          Container(
-                              margin: EdgeInsets.only(
-                                  right:
-                                      MediaQuery.of(context).size.width * 0.04),
+                          child: Container(
                               child: new Image.asset(
-                                'assets/images/dispatchServices.png',
-                                height: 40,
-                                width: 40,
-                                fit: BoxFit.contain,
-                              )),
-                          Text(
-                            'Dispatch Services',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 10.50,
-                                fontWeight: FontWeight.w700),
-                          )
-                        ]),
-                      ),
-                      InkWell(
+                            'assets/images/laundryIcon.png',
+                            height: MediaQuery.of(context).size.height * (0.10),
+                            width: MediaQuery.of(context).size.width * (0.50),
+                            fit: BoxFit.contain,
+                          )),
+                        ),
+                        InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/postconstruction');
+                            Navigator.pushNamed(context, '/homecleaning');
                           },
                           child: Container(
                             width: 140,
-                            child: Row(
-                                //                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Container(
-                                      margin: EdgeInsets.only(right: 5.0),
-                                      child: new Image.asset(
-                                        'assets/images/postConstruction.png',
-                                        height: 40,
-                                        width: 40,
-                                        fit: BoxFit.contain,
-                                      )),
-                                  Text(
-                                    'Post Construction',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 10.50,
-                                        fontWeight: FontWeight.w700),
-                                  )
-                                ]),
-                          )),
-                    ],
-                  )),
-              Container(
-                  //      margin: EdgeInsets.only(top: 10.0),
-                  width: MediaQuery.of(context).size.width * 0.90,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                    Text('Top Deals',
-                        style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700)),
-
-                  ])),
-                                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(9.0),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/topDeals.png'),
-                            fit: BoxFit.cover,
+                            child: new Image.asset(
+                              'assets/images/houseCleaningIcon.png',
+                              height:
+                                  MediaQuery.of(context).size.height * (0.10),
+                              width: MediaQuery.of(context).size.width * (0.40),
+                              fit: BoxFit.contain,
+                            ),
                           ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                   margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.009),
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, '/enterfooddetails');
+                              },
+                              child: new Image.asset(
+                                'assets/images/foodDeliveryIcon.png',
+                                height:
+                                    MediaQuery.of(context).size.height * (0.10),
+                                width:
+                                    MediaQuery.of(context).size.width * (0.40),
+                                fit: BoxFit.contain,
+                              )),
+                          InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, '/homeSalon');
+                            },
+                            child: Container(
+                              width: 140,
+                              child: new Image.asset(
+                                'assets/images/homeSalonIcon.png',
+                                height:
+                                    MediaQuery.of(context).size.height * (0.10),
+                                width:
+                                    MediaQuery.of(context).size.width * (0.40),
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )),
+                  Container(
+                     margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.009),
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, '/scheduledispatch');
+                            },
+                            child: new Image.asset(
+                              'assets/images/dispatchServicesIcon.png',
+                              height:
+                                  MediaQuery.of(context).size.height * (0.10),
+                              width: MediaQuery.of(context).size.width * (0.45),
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, '/postconstruction');
+                              },
+                              child: Container(
+                                width: 140,
+                                child: new Image.asset(
+                                  'assets/images/postConstructionIcon.png',
+                                  height: MediaQuery.of(context).size.height *
+                                      (0.10),
+                                  width: MediaQuery.of(context).size.width *
+                                      (0.40),
+                                  fit: BoxFit.contain,
+                                ),
+                              )),
+                        ],
+                      )),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.95,
+                               margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
+                              child:                             Text('Top Deals',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    )),
+                            ),
+
+                          
+                  Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(9.0),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/topDeals.png'),
+                          fit: BoxFit.cover,
                         ),
-                        margin: EdgeInsets.symmetric(vertical: 15.0),
-                        width: MediaQuery.of(context).size.width * 0.90,
-                        height: 89.0,
-                        child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical:
-                                    MediaQuery.of(context).size.height * 0.02),
-                            child: TypewriterAnimatedTextKit(
+                      ),
+                      margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.02),
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      height: 89.0,
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            TypewriterAnimatedTextKit(
                                 onTap: () {
                                   print("15% off Fill it bag");
                                 },
@@ -285,27 +206,36 @@ class _MyHomePageState extends State<MyHomePage> {
                                 textStyle: TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  shadows: [
+                                    Shadow(
+                                      blurRadius: 4.0,
+                                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                                      offset: Offset(0, 4.0),
+                                    ),
+                                  ],
                                 ),
                                 textAlign: TextAlign.start,
                                 alignment: AlignmentDirectional
                                     .topStart // or Alignment.topLeft
-                                ))),
-                    Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(9.0),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/topDeals.png'),
-                            fit: BoxFit.cover,
-                          ),
+                                )
+                          ])),
+                  Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(9.0),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/topDeals.png'),
+                          fit: BoxFit.cover,
                         ),
-                        margin: EdgeInsets.only(bottom: 15.0),
-                        width: MediaQuery.of(context).size.width * 0.90,
-                        height: 89.0,
-                        child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical:
-                                    MediaQuery.of(context).size.height * 0.02),
-                            child: TypewriterAnimatedTextKit(
+                      ),
+                      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      height: 89.0,
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            TypewriterAnimatedTextKit(
                                 onTap: () {
                                   print("15% off Fill it bag");
                                 },
@@ -318,6 +248,98 @@ class _MyHomePageState extends State<MyHomePage> {
                                 textStyle: TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  shadows: [
+                                    Shadow(
+                                      blurRadius: 4.0,
+                                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                                      offset: Offset(0, 4.0),
+                                    ),
+                                  ],
+                                ),
+                                textAlign: TextAlign.start,
+                                alignment: AlignmentDirectional
+                                    .topStart // or Alignment.topLeft
+                                )
+                          ])),
+                                            Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(9.0),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/topDeals.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      height: 89.0,
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            TypewriterAnimatedTextKit(
+                                onTap: () {
+                                  print("15% off Fill it bag");
+                                },
+                                totalRepeatCount: 100,
+                                text: [
+                                  "   15% off Fill it bag",
+                                  "   Get it today!",
+                                ],
+                                displayFullTextOnTap: true,
+                                textStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  shadows: [
+                                    Shadow(
+                                      blurRadius: 4.0,
+                                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                                      offset: Offset(0, 4.0),
+                                    ),
+                                  ],
+                                ),
+                                textAlign: TextAlign.start,
+                                alignment: AlignmentDirectional
+                                    .topStart // or Alignment.topLeft
+                                )
+                          ])),
+                  Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(9.0),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/topDeals.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      height: 89.0,
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            TypewriterAnimatedTextKit(
+                                onTap: () {
+                                  print("15% off Fill it bag");
+                                },
+                                totalRepeatCount: 100,
+                                text: [
+                                  "   15% off Fill it bag",
+                                  "   Get it today!",
+                                ],
+                                displayFullTextOnTap: true,
+                                textStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  shadows: [
+                                    Shadow(
+                                      blurRadius: 4.0,
+                                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                                      offset: Offset(0, 4.0),
+                                    ),
+                                  ],
                                 ),
                                 textAlign: TextAlign.start,
                                 alignment: AlignmentDirectional
@@ -328,12 +350,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             //       color: Colors.white,
                             //       fontSize: 20,
                             //     ))
-                            ))
-            ],
-          ),
-        ),
-      ),
-    );
+                          ]))
+                ],
+              ),
+            ),
+           ) )),
+        ));
 
     // Here we take the value from the MyHomePage object that was created by
     // the App.build method, and use it to set our appbar title.

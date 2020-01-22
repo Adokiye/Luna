@@ -5,8 +5,8 @@
  <item>
         <bitmap
             android:gravity="center"
-            width="400"
-            height="400"
+            width="600"
+            height="600"
             android:src="@mipmap/logo"/>
     </item>
 </layer-list>

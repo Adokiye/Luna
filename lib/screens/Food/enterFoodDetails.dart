@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../components/buttons/scheduleButton.dart';
-import '../../components/BottomNavbar/bottomnavbar.dart';
 import '../../components/AppBar/appBar.dart';
-
-
+import '../../components/BottomNavbar/bottomnavbar.dart';
 
 class EnterFoodDetails extends StatefulWidget {
   EnterFoodDetails({Key key, this.title}) : super(key: key);
@@ -47,20 +45,24 @@ class _EnterFoodDetailsState extends State<EnterFoodDetails> {
             ),
           )),
       body: SafeArea(
-        child: Center(
-            child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              MyCustomForm(),
-              Container(
+        child:  Center(
+          child: Stack(
+      children: <Widget>[       
+        Container(
+          height: MediaQuery.of(context).size.height,
+          child: SingleChildScrollView(
+            child:  MyCustomForm())),
+              Positioned(
+                bottom: 0,
+                child:               Container(
                   width: MediaQuery.of(context).size.width * 0.90,
-                  child: BottomNavBar())
+                  child: BottomNavBar()),
+              )
+
             ],
-          ),
-        )),
+          )),
       ),
+      
     );
 
     // Here we take the value from the MyHomePage object that was created by
@@ -91,16 +93,12 @@ class MyCustomFormState extends State<MyCustomForm> {
     // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: Container(
-        child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.05,
-                top: MediaQuery.of(context).size.height * 0.05,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -132,13 +130,11 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.05,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -173,13 +169,11 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.05,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -207,13 +201,11 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.05,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -225,9 +217,9 @@ class MyCustomFormState extends State<MyCustomForm> {
               )),
               child: new TextFormField(
                 decoration: new InputDecoration(
-                  labelText: "Delivery Address",
+                  labelText: "Pickup Address",
                   fillColor: Colors.white,
-                  hintText: 'Enter your Delivery Address',
+                  hintText: 'Enter your Pickup Address',
                   hintStyle: TextStyle(
                     fontSize: 13.0,
                     color: const Color(0xffC4C4C4),
@@ -236,7 +228,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 ),
                 validator: (val) {
                   if (val.length == 0) {
-                    return "Delivery address cannot be empty";
+                    return "Pickup address cannot be empty";
                   } else {
                     return null;
                   }
@@ -245,23 +237,47 @@ class MyCustomFormState extends State<MyCustomForm> {
                 style: new TextStyle(
                   fontSize: 16.0,
                   color: Colors.black,
-                  height: 2.0,
+                  height: 1.0,
                 ),
               )),
-          Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.05,
-              ),
-              child: new Image.asset(
-                'assets/images/foodIcon.png',
-                height: 40,
-                width: 40,
-                fit: BoxFit.contain,
+          new Container(
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
+              width: MediaQuery.of(context).size.width * 0.90,
+              decoration: BoxDecoration(
+                  border: Border(
+                bottom: BorderSide(
+                  //                    <--- top side
+                  color: const Color(0xffC4C4C4),
+                  width: 1.0,
+                ),
               )),
+              child: new TextFormField(
+                decoration: new InputDecoration(
+                  labelText: "Delivery Address (If Different)",
+                  fillColor: Colors.white,
+                  hintText: 'Enter your delivery address',
+                  hintStyle: TextStyle(
+                    fontSize: 13.0,
+                    color: const Color(0xffC4C4C4),
+                  ),
+                  border: InputBorder.none,
+                ),
+                keyboardType: TextInputType.text,
+                style: new TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.black,
+                  height: 1.0,
+                ),
+              )),
+              Container(
+                            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
+                child: new Image.asset('assets/images/foodIcon.png', height: 40, fit: BoxFit.contain,),
+              ),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(9.0),
             ),
+            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
             child: ScheduleButton(
                 onPressed: () {
                   // Validate returns true if the form is valid, or false
@@ -276,7 +292,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 text: 'PROCEED'),
           ),
         ],
-       ) ),
-    );
+      ),
+     );
   }
 }

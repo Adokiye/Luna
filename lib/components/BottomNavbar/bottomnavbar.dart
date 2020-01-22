@@ -11,6 +11,7 @@ class BottomNavBar extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
+                                
                                   Spacer(),
                                   Spacer(),
                                       SizedBox(

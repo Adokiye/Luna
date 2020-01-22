@@ -51,18 +51,23 @@ class _PaymentMethodState extends State<PaymentMethod> {
               height: MediaQuery.of(context).size.height,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
+                
                 children: <Widget>[
-                  Text(
+                  Container(
+                    margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
+                    child:                   Text(
                     'Payment Method',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.black, fontSize: 20.0),
+                    style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w700),
+
+                  )
                   ),
                   new GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/success');
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(vertical: 15.0),
+                    margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
                       width: MediaQuery.of(context).size.width * (0.90),
                       decoration: BoxDecoration(
                         borderRadius: new BorderRadius.circular(4.0),
@@ -82,7 +87,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                       Navigator.pushNamed(context, '/success');
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(vertical: 15.0),
+                 margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
                       width: MediaQuery.of(context).size.width * (0.90),
                       decoration: BoxDecoration(
                         borderRadius: new BorderRadius.circular(4.0),
@@ -102,7 +107,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                       Navigator.pushNamed(context, '/success');
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(vertical: 15.0),
+                    margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
                       width: MediaQuery.of(context).size.width * (0.90),
                       decoration: BoxDecoration(
                         borderRadius: new BorderRadius.circular(4.0),

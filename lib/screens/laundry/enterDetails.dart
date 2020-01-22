@@ -45,20 +45,24 @@ class _EnterDetailsState extends State<EnterDetails> {
             ),
           )),
       body: SafeArea(
-        child: Center(
-            child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              MyCustomForm(),
-              Container(
+        child:  Center(
+          child: Stack(
+      children: <Widget>[       
+        Container(
+          height: MediaQuery.of(context).size.height,
+          child: SingleChildScrollView(
+            child:  MyCustomForm())),
+              Positioned(
+                bottom: 0,
+                child:               Container(
                   width: MediaQuery.of(context).size.width * 0.90,
-                  child: BottomNavBar())
+                  child: BottomNavBar()),
+              )
+
             ],
-          ),
-        )),
+          )),
       ),
+      
     );
 
     // Here we take the value from the MyHomePage object that was created by
@@ -90,13 +94,11 @@ class MyCustomFormState extends State<MyCustomForm> {
     return Form(
       key: _formKey,
       child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-                top: MediaQuery.of(context).size.height * 0.02,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -132,9 +134,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 ),
               )),
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -173,9 +173,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 ),
               )),
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -207,9 +205,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 ),
               )),
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -245,9 +241,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 ),
               )),
           new Container(
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.02,
-              ),
+margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
                   border: Border(
@@ -279,6 +273,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(9.0),
             ),
+            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
             child: ScheduleButton(
                 onPressed: () {
                   // Validate returns true if the form is valid, or false
@@ -294,6 +289,6 @@ class MyCustomFormState extends State<MyCustomForm> {
           ),
         ],
       ),
-    );
+     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../components/BottomNavbar/bottomnavbar.dart';
 import '../../components/AppBar/appBar.dart';
+
 class TypeOfHomeSalon extends StatefulWidget {
   TypeOfHomeSalon({Key key, this.title}) : super(key: key);
 
@@ -49,10 +50,12 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                 height: MediaQuery.of(context).size.height,
                 child: SingleChildScrollView(
                   child: Column(
-                             mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       new InkWell(
-                        onTap: () {Navigator.pushNamed(context, '/genthaircut');},
+                        onTap: () {
+                          Navigator.pushNamed(context, '/genthaircut');
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -61,14 +64,15 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          margin: EdgeInsets.symmetric(vertical: 15.0),
+                          margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.04),
                           width: MediaQuery.of(context).size.width,
                           height: 132.0,
                           child: Padding(
                               padding: EdgeInsets.only(
                                   bottom: 10.0, left: 22.0, right: 22.0),
                               child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -80,47 +84,56 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                                   ])),
                         ),
                       ),
-                      Material(
-                        child:   Ink.image(
-                              image:
-                                  AssetImage('assets/images/hairdressing.png'),
-                              fit: BoxFit.cover,
-                                                        width: MediaQuery.of(context).size.width,
-                          height: 132.0,
-                            
-                            child: new InkWell(
-                              onTap: () {Navigator.pushNamed(context, '/hairstyling');},
-                        child: Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image:
-                                  AssetImage('assets/images/hairdressing.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          margin: EdgeInsets.symmetric(vertical: 15.0),
-                          width: MediaQuery.of(context).size.width,
-                          height: 132.0,
-                          child: Padding(
-                              padding: EdgeInsets.only(
-                                  bottom: 0.0, left: 22.0, right: 22.0),
-                              child: Row(
-                                                        crossAxisAlignment: CrossAxisAlignment.end,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Text('HAIR DRESSING',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                        )),
-                                  ])),
-                        ),
-                      )                        )                    
-                      ),
+                      Container(
+                          margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.04),
+                          child: Material(
+                              child: Ink.image(
+                                  image: AssetImage(
+                                      'assets/images/hairdressing.png'),
+                                  fit: BoxFit.cover,
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 132.0,
+                                  child: new InkWell(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, '/hairstyling');
+                                    },
+                                    child: Container(
+                                      // decoration: BoxDecoration(
+                                      //   image: DecorationImage(
+                                      //     image:
+                                      //         AssetImage('assets/images/hairdressing.png'),
+                                      //     fit: BoxFit.cover,
+                                      //   ),
+                                      // ),
 
+                                      width: MediaQuery.of(context).size.width,
+                                      height: 132.0,
+                                      child: Padding(
+                                          padding: EdgeInsets.only(
+                                              bottom: 0.0,
+                                              left: 22.0,
+                                              right: 22.0),
+                                          child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: <Widget>[
+                                                Text('HAIR DRESSING',
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 20,
+                                                    )),
+                                              ])),
+                                    ),
+                                  )))),
                       new InkWell(
-                        onTap: () {Navigator.pushNamed(context, '/nails');},
+                        onTap: () {
+                          Navigator.pushNamed(context, '/nails');
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -128,14 +141,15 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          margin: EdgeInsets.symmetric(vertical: 15.0),
+                          margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.04),
                           width: MediaQuery.of(context).size.width,
                           height: 132.0,
                           child: Padding(
                               padding: EdgeInsets.only(
                                   bottom: 10.0, left: 22.0, right: 22.0),
                               child: Row(
-                                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -148,7 +162,9 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                         ),
                       ),
                       new InkWell(
-                        onTap: () {Navigator.pushNamed(context, '/makeup');},
+                        onTap: () {
+                          Navigator.pushNamed(context, '/makeup');
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -156,14 +172,15 @@ class _TypeOfHomeSalonState extends State<TypeOfHomeSalon> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          margin: EdgeInsets.symmetric(vertical: 15.0),
+                          margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.04),
                           width: MediaQuery.of(context).size.width,
                           height: 132.0,
                           child: Padding(
                               padding: EdgeInsets.only(
                                   bottom: 10.0, left: 22.0, right: 22.0),
                               child: Row(
-                                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[

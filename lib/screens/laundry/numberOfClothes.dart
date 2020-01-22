@@ -123,6 +123,7 @@ class _ListTileItemState extends State<ListTileItem> {
   Widget build(BuildContext context) {
     return new Container(
       width: MediaQuery.of(context).size.width * (0.90),
+                          margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
       height: 65.0,
       decoration: BoxDecoration(
           borderRadius: new BorderRadius.circular(3.0),
@@ -153,7 +154,7 @@ class _ListTileItemState extends State<ListTileItem> {
                         child: Container(
                           margin: EdgeInsets.only(right: 14.0),
                           width: 19.0,
-                          height: 19.0,
+                          height: 30.0,
                           decoration: BoxDecoration(
                               borderRadius: new BorderRadius.circular(3.0),
                               color: const Color(0xffF7BF14)),
@@ -180,7 +181,7 @@ class _ListTileItemState extends State<ListTileItem> {
                   onTap: () => setState(() => _itemCount++),
                   child: Container(
                     width: 19.0,
-                    height: 19.0,
+                    height: 30.0,
                     decoration: BoxDecoration(
                         borderRadius: new BorderRadius.circular(3.0),
                         color: const Color(0xffF7BF14)),
