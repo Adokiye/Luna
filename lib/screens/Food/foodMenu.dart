@@ -120,6 +120,7 @@ class _FoodMenuState extends State<FoodMenu> {
               Center(
                 child: Container(
                 height: MediaQuery.of(context).size.height,
+                margin: EdgeInsets.only(bottom: 60),
                 child: SingleChildScrollView(
                   child: Column(
                     //         mainAxisAlignment: MainAxisAlignment.spaceBetween,

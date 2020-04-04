@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:luno/screens/laundry/numberOfClothes.dart';
-
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import 'package:luno/models/laundryModel.dart';
+import 'package:luno/models/app_state.dart';
+import 'package:luno/reducers/laundryReducer.dart';
+import 'package:meta/meta.dart';
 class Shirts extends StatefulWidget {
   Shirts({Key key, this.title}) : super(key: key);
 
@@ -29,7 +34,9 @@ class _ShirtsState extends State<Shirts> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
 
-    return SingleChildScrollView(
+    return new StoreConnector<AppState, _ViewModel>(
+        converter: (Store<AppState> store) => _ViewModel.create(store),
+          builder: (context, _ViewModel viewModel) => SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Material(
@@ -146,6 +153,29 @@ class _ShirtsState extends State<Shirts> {
             ),
           ],
         ),
+       )   );
+  }
+}
+
+class _ViewModel {
+  final List<LaundryModel> item;
+  // final Function(String) onAddItem;
+
+  _ViewModel({
+    this.item,
+    // this.onAddItem,
+  });
+
+  factory _ViewModel.create(Store<AppState> store) {
+    // _onAddItem(String body) {
+    //   store.dispatch(AddItemAction(body));
+    // }
+
+
+
+    return _ViewModel(
+      item: store.state.item,
+      // onAddItem: _onAddItem,
     );
   }
 }

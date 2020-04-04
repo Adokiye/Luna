@@ -8,6 +8,7 @@ import '../../components/Lists/Kids/Kids.dart';
 import '../../components/Lists/Others/Others.dart';
 import '../../components/BottomNavbar/bottomnavbar.dart';
 import '../../components/AppBar/appBar.dart';
+import './numberOfClothes.dart';
 
 class ClothTypes extends StatefulWidget {
   ClothTypes({Key key, this.title}) : super(key: key);
@@ -513,24 +514,28 @@ class _ClothTypesState extends State<ClothTypes> {
                   bottom: 0,
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, '/numberofclothes');
+                                          Navigator.push(context,   MaterialPageRoute(
+      builder: (context) => NumberOfClothes(title: 'T-Shirts',),
+    ));
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 45.0,
                       color: const Color(0xff00ADEF),
                       child: Padding(
-                          padding: EdgeInsets.only(
-                            top: 10.0,
-                            left: 22.0,
-                          ),
-                          child: Text('Proceed',
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.0                       ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,                         
+                             children:<Widget>[
+                              Text('Proceed to Selection',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
-                              ))),
+                              ))]),
                     ),
-                  )),
+                )  )),
               Positioned(
                 bottom: 15,
                 child: Container(

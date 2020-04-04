@@ -1,11 +1,12 @@
 class LaundryModel {
   String name;
-  bool checked;
+  int count = 0;
+  int amount;
 
-  LaundryModel(this.name, this.checked);
+  LaundryModel(this.name, this.count, this.amount);
 
   @override
   String toString() {
-    return "$name: $checked";
+    return "$name: $count: $amount";
   }
   }

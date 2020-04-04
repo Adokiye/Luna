@@ -9,7 +9,8 @@ class BoxNumberInput extends StatelessWidget {
   final String label;
   final bool optional;
   final bool small;
-  BoxNumberInput({@required this.label, this.optional, this.small});
+  final String hint;
+  BoxNumberInput({@required this.label, this.optional, this.small, this.hint});
   @override
   Widget build(BuildContext context) {
     return new Column(
@@ -19,16 +20,21 @@ class BoxNumberInput extends StatelessWidget {
             bottom: MediaQuery.of(context).size.height * 0.01,
             top: MediaQuery.of(context).size.height * 0.01,
           ),
-          width: small ? MediaQuery.of(context).size.width * 0.25 : MediaQuery.of(context).size.width * 0.90,
+          width: small
+              ? MediaQuery.of(context).size.width * 0.25
+              : MediaQuery.of(context).size.width * 0.90,
           child: Text(label,
-              style: TextStyle(fontSize: small ? 10.0 : 14.0, color: Colors.black)),
+              style: TextStyle(
+                  fontSize: small ? 10.0 : 14.0, color: Colors.black)),
         ),
         new Container(
             margin: EdgeInsets.only(
               bottom: MediaQuery.of(context).size.height * 0.02,
               top: MediaQuery.of(context).size.height * 0.02,
             ),
-          width:  small ? MediaQuery.of(context).size.width * 0.25 : MediaQuery.of(context).size.width * 0.90,
+            width: small
+                ? MediaQuery.of(context).size.width * 0.25
+                : MediaQuery.of(context).size.width * 0.90,
             height: 40.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3.0),
@@ -40,7 +46,7 @@ class BoxNumberInput extends StatelessWidget {
                   decoration: new InputDecoration(
                     //     labelText: "Name",
                     fillColor: Colors.white,
-                    hintText: small ? '$label': 'Enter your $label',
+                    hintText: small ? '$label' : 'Input your $hint',
                     hintStyle: TextStyle(
                       fontSize: 13.0,
                       color: const Color(0xff00ADEF),
@@ -50,7 +56,7 @@ class BoxNumberInput extends StatelessWidget {
                   validator: (val) {
                     if (!optional) {
                       if (val.length == 0) {
-                        return "$label cannot be empty";
+                        return "$hint cannot be empty";
                       } else {
                         return null;
                       }

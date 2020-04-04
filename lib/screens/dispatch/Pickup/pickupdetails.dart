@@ -152,10 +152,10 @@ class PickUpFormState extends State<PickUpForm> {
       // }
     });
     if (value == 1) {
-      DatePicker.showDatePicker(context,
+      DatePicker.showDateTimePicker(context,
           showTitleActions: true, minTime: scheduleDate, onChanged: (date) {
-        Fluttertoast.showToast(
-            msg: f.format(date), toastLength: Toast.LENGTH_SHORT);
+        // Fluttertoast.showToast(
+        //     msg: f.format(date), toastLength: Toast.LENGTH_SHORT);
       }, onConfirm: (date) {
         setState(() {
           scheduleDate = date;
@@ -182,15 +182,15 @@ class PickUpFormState extends State<PickUpForm> {
         children: <Widget>[
           
           BoxTextInput(
-            label: 'ADDRESS', optional: false, small: false
+            label: 'ADDRESS', optional: false, small: false,hint:'address'
           ),
-          BoxTextInput(label: 'FIRST NAME', optional: false, small: false),
-          BoxTextInput(label: 'LAST NAME', optional: false, small: false),
-          BoxNumberInput(label: 'PHONE NUMBER', optional: false, small: false),
+          BoxTextInput(label: 'FIRST NAME', optional: false, small: false,hint:'first name'),
+          BoxTextInput(label: 'LAST NAME', optional: false, small: false,hint:'last name'),
+          BoxNumberInput(label: 'PHONE NUMBER', optional: false, small: false,hint:'phone number'),
           BoxEmailInput(label: 'EMAIL', optional: false, small: false),
           Container(
               width: MediaQuery.of(context).size.width,
-             height: 200,
+         //    height: 0,
               margin: EdgeInsets.symmetric(vertical: 10.0),
               decoration: BoxDecoration(
                 boxShadow: [
@@ -266,9 +266,7 @@ class PickUpFormState extends State<PickUpForm> {
                                         ),
                                       )
                                     ],
-                                  ),
-                                  (_radioValue1 ==
-                                          1) && (index == 0) ?
+                                  ), (index == 0) ?
                                       PhoneCallForm() : new Container(),
                                   (_radioValue2 ==
                                           1) && (index == 1) ? 
@@ -341,6 +339,7 @@ class PickUpFormState extends State<PickUpForm> {
           //       },
           //       text: 'PROCEED'),
           // ),
+          
         ],
       ),
     );

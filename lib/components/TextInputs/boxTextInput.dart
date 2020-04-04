@@ -7,9 +7,10 @@ class BoxTextInput extends StatelessWidget {
   // Note: This is a GlobalKey<FormState>,
   // not a GlobalKey<BoxTextInputState>.
   final String label;
+  final String hint;
   final bool optional;
   final bool small;
-  BoxTextInput({@required this.label, this.optional, this.small});
+  BoxTextInput({@required this.label, this.optional, this.small, this.hint});
   @override
   Widget build(BuildContext context) {
     return new Column(
@@ -40,7 +41,7 @@ class BoxTextInput extends StatelessWidget {
                   decoration: new InputDecoration(
                     //     labelText: "Name",
                     fillColor: Colors.white,
-                    hintText: 'Enter your $label',
+                    hintText: 'Input your $hint',
                     hintStyle: TextStyle(
                       fontSize: 13.0,
                       color: const Color(0xff00ADEF),
@@ -50,7 +51,7 @@ class BoxTextInput extends StatelessWidget {
                   validator: (val) {
                     if (!optional) {
                       if (val.length == 0) {
-                        return "$label cannot be empty";
+                        return "$hint cannot be empty";
                       } else {
                         return null;
                       }

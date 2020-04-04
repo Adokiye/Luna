@@ -25,6 +25,8 @@ import 'screens/dispatch/trackOrder.dart';
 import 'components/Success.dart';
 import 'screens/orderProgress.dart';
 import 'screens/splash.dart';
+import 'package:luno/models/app_state.dart';
+import 'package:luno/reducers/laundryReducer.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,8 +37,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: title,
+        final Store store = Store<AppState>(
+      appStateReducer,
+      initialState: AppState.initialState(),
+    );
+    return StoreProvider<AppState>(
+      store: store,
+      child: new MaterialApp(
+           title: title,
       theme: ThemeData(
         fontFamily: 'Rubik',
         primaryColor: const Color(0xff00adef),
@@ -73,6 +81,6 @@ class MyApp extends StatelessWidget {
         '/trackdispatch': (context) => TrackDispatchOrder(),
       },
       //    home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+     ) );
   }
 }

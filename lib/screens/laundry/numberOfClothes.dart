@@ -79,9 +79,10 @@ class NumberOfClothes extends StatelessWidget {
               height: 45.0,
 
             child:      Padding(
-              padding: EdgeInsets.only(top: 10.0, left: 22.0, right: 22.0),
+              padding: EdgeInsets.only(left: 22.0, right: 22.0),
               child:Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children:<Widget>[Text('Your Basket',
                         style: TextStyle(
                           color: Colors.white,

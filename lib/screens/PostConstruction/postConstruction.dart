@@ -103,8 +103,9 @@ class _PostConstructionState extends State<PostConstruction> {
                         color: const Color(0xff00ADEF),
                         child: Padding(
                           padding: EdgeInsets.only(
-                              top: 0.0, left: 22.0, right: 22.0),
+                             left: 22.0, right: 22.0),
                           child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Text('REQUEST QUOTE',
@@ -173,16 +174,16 @@ class MyCustomFormState extends State<MyCustomForm> {
            Row(
              mainAxisAlignment: MainAxisAlignment.spaceAround,
              children: <Widget>[
-               BoxNumberInput(label: 'Date(DD)', optional: false, small: true),
-               BoxNumberInput(label: 'Month(MM)', optional: false, small: true),
-               BoxNumberInput(label: 'Year(YYYY)', optional: false, small: true),
+               BoxNumberInput(label: 'Date(DD)', optional: false, small: true,hint:'date'),
+               BoxNumberInput(label: 'Month(MM)', optional: false, small: true,hint:'month'),
+               BoxNumberInput(label: 'Year(YYYY)', optional: false, small: true,hint:'year'),
              ],
            )
            ] ),
-           BoxTextInput(label: 'Address', optional: false, small: false),
-           BoxNumberInput(label: 'Phone Number', optional: false, small: false),
-            BoxNumberInput(label: 'Alternate Phone Number',optional: true, small: false),
-             BoxNumberInput(label: 'How Many rooms(includes Living Room,Kitchen,Toilet,BQ)', optional: false, small: false),
+           BoxTextInput(label: 'Address', optional: false, small: false,hint:'address'),
+           BoxNumberInput(label: 'Phone Number', optional: false, small: false,hint:'phone number'),
+            BoxNumberInput(label: 'Alternate Phone Number',optional: true, small: false,hint:'alternative phone number'),
+             BoxNumberInput(label: 'How Many rooms(includes Living Room,Kitchen,Toilet,BQ)', optional: false, small: false,hint:'rooms'),
 
           Container(
             margin: EdgeInsets.only(
@@ -234,7 +235,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                               fontSize: 13,
                               fontWeight: FontWeight.w700,
                             )),
-                        service == 0
+                        service != 0
                             ? new Container(
                                 width: 23,
                                 height: 23,
@@ -299,7 +300,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                               fontSize: 13,
                               fontWeight: FontWeight.w700,
                             )),
-                        service == 1
+                        service != 1
                             ? new Container(
                                 width: 23,
                                 height: 23,

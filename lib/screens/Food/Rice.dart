@@ -19,6 +19,12 @@ class Rice extends StatefulWidget {
 }
 
 class _RiceState extends State<Rice> {
+  int foodVendor = 0;
+  int swallow = 0;
+  int rice = 0;
+  int meat = 0;
+  int drinks = 0;
+  int soups = 0;
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -27,207 +33,174 @@ class _RiceState extends State<Rice> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-   int food_vendor = 0;
-   int swallow = 0;
-   int rice = 0;
-   int meat = 0;
-   int drinks = 0;
-   int soups = 0;
 
-   void swallowSetter(int value){
-     setState(() {
-      swallow = value; 
-     });
-   }
-   
-     void food_vendorSetter(int value){
-     setState(() {
-      food_vendor = value; 
-     });
-   } 
+    void swallowSetter(int value) {
+      setState(() {
+        swallow = value;
+      });
+    }
 
-      void riceSetter(int value){
-     setState(() {
-      rice = value; 
-     });
-   }
+    void foodVendorSetter(int value) {
+      setState(() {
+        print(value);
+        foodVendor = value;
+      });
+    }
 
-      void meatSetter(int value){
-     setState(() {
-      meat = value; 
-     });
-   }
+    void riceSetter(int value) {
+      setState(() {
+        rice = value;
+      });
+    }
 
-      void drinksSetter(int value){
-     setState(() {
-      swallow = value; 
-     });
-   }
+    void meatSetter(int value) {
+      setState(() {
+        meat = value;
+      });
+    }
 
-         void soupsSetter(int value){
-     setState(() {
-      soups = value; 
-     });
-   }
+    void drinksSetter(int value) {
+      setState(() {
+        swallow = value;
+      });
+    }
 
-   
-    return Column(
+    return Container(
+        width: MediaQuery.of(context).size.width * 0.90,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-                                  Container(
-                        margin: EdgeInsets.only(bottom: 10.0),
-                        width: MediaQuery.of(context).size.width * 0.90,
-                        child: Text('RICE', style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w700, color: Colors.black)),
-                                  ),
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10.0),
-                        width: MediaQuery.of(context).size.width * 0.90,
-                        child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            new Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      new Radio(
-                                        activeColor: const Color(0xff00adef),
-                                        value: 0,
-                                        groupValue: rice,
-                                        onChanged: riceSetter,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(left: 10.0),
-                                        child: new Text(
-                                          'Jollof',
-                                          style: new TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                                              new Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      new Radio(
-                                        activeColor: const Color(0xff00adef),
-                                        value: 1,
-                                        groupValue: rice,
-                                        onChanged: riceSetter,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(left: 10.0),
-                                        child: new Text(
-                                          'Fried',
-                                          style: new TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                          ],
-                        )                                  
-                      ),
-                                            Container(
-                        margin: EdgeInsets.only(bottom: 10.0),
-                        width: MediaQuery.of(context).size.width * 0.90,
-                        child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            new Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      new Radio(
-                                        activeColor: const Color(0xff00adef),
-                                        value: 2,
-                                        groupValue: rice,
-                                        onChanged: riceSetter,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(left: 10.0),
-                                        child: new Text(
-                                          'White',
-                                          style: new TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                                              new Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      new Radio(
-                                        activeColor: const Color(0xff00adef),
-                                        value: 3,
-                                        groupValue: rice,
-                                        onChanged: riceSetter,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(left: 10.0),
-                                        child: new Text(
-                                          'Coconut',
-                                          style: new TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                          ],
-                        )                                  
-                      ),
-                                            Container(
-                        margin: EdgeInsets.only(bottom: 10.0),
-                        width: MediaQuery.of(context).size.width * 0.90,
-                        child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            new Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      new Radio(
-                                        activeColor: const Color(0xff00adef),
-                                        value: 4,
-                                        groupValue: rice,
-                                        onChanged: riceSetter,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(left: 10.0),
-                                        child: new Text(
-                                          'Ofada',
-                                          style: new TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                                              new Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      new Radio(
-                                        activeColor: const Color(0xff00adef),
-                                        value: 5,
-                                        groupValue: rice,
-                                        onChanged: riceSetter,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(left: 10.0),
-                                        child: new Text(
-                                          'Spaghetti',
-                                          style: new TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                          ],
-                        )                                  
-                      ),
-            
+            Container(
+              margin: EdgeInsets.only(bottom: 10.0),
+              width: MediaQuery.of(context).size.width * 0.90,
+              child: Text('RICE',
+                  style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black)),
+            ),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.40,
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        new Radio(
+                          activeColor: const Color(0xff00adef),
+                          value: 0,
+                          groupValue: foodVendor,
+                          onChanged: (val) {
+                            setState(() {
+                              setState(() {
+                                foodVendor = val;
+                              });
+                            });
+                          },
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 0.0),
+                          child: new Text(
+                            'Jollof',
+                            style: new TextStyle(
+                                fontSize: 12.0, color: Colors.black),
+                          ),
+                        )
+                      ],
+                    )),
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.40,
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        new Radio(
+                          activeColor: const Color(0xff00adef),
+                          value: 1,
+                          groupValue: foodVendor,
+                          onChanged: (val) {
+                            setState(() {
+                              setState(() {
+                                foodVendor = val;
+                              });
+                            });
+                          },
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 0.0),
+                          child: new Text(
+                            'White',
+                            style: new TextStyle(
+                                fontSize: 12.0, color: Colors.black),
+                          ),
+                        )
+                      ],
+                    )),
+              ],
+            ),
+            Container(
+                //     width: MediaQuery.of(context).size.width * 0.90,
+                child: new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.40,
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        new Radio(
+                          activeColor: const Color(0xff00adef),
+                          value: 2,
+                          groupValue: foodVendor,
+                          onChanged: (val) {
+                            setState(() {
+                              setState(() {
+                                foodVendor = val;
+                              });
+                            });
+                          },
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 0.0),
+                          child: new Text(
+                            'Fried',
+                            style: new TextStyle(
+                                fontSize: 12.0, color: Colors.black),
+                          ),
+                        )
+                      ],
+                    )),
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.40,
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        new Radio(
+                          activeColor: const Color(0xff00adef),
+                          value: 3,
+                          groupValue: foodVendor,
+                          onChanged: (val) {
+                            setState(() {
+                              setState(() {
+                                foodVendor = val;
+                              });
+                            });
+                          },
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 0.0),
+                          child: new Text(
+                            'Ofada',
+                            style: new TextStyle(
+                                fontSize: 12.0, color: Colors.black),
+                          ),
+                        )
+                      ],
+                    )),
+              ],
+            )),
           ],
-        
-    );
+        ));
   }
 }
